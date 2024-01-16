@@ -1,1 +1,40 @@
-<p>orders-list works!</p>
+
+  <div  class="orders-list" *ngFor="let order of orderArr">
+    <h3>Order ID: {{ order.omsId }}</h3>
+    <div>
+      <h4>Products:</h4>
+      <ul *ngFor="let product of order.products">
+        <li >
+          GTIN: {{ product.gtin }}
+        </li>
+        <li >
+          Quantity: {{ product.quantity }}
+        </li>
+        <li >
+          Serial Number Type: {{ product.serialNumberType}}
+        </li>
+        <li >
+          Serial Numbers: {{ product.serialNumbers }}
+        </li>
+        <li >
+          Template ID: {{ product.templateId }}
+        </li>
+      </ul>
+    </div>
+    <div>
+      <h4>Order Details:</h4>
+      <ul>
+        <li>Factory ID: {{ order.orderDetails.factoryId }}</li>
+        <li>Factory Name: {{ order.orderDetails.factoryName }}</li>
+        <li>Factory Address: {{ order.orderDetails.factoryAddress }}</li>
+        <li>Factory Country: {{ order.orderDetails.factoryCountry }}</li>
+        <li>Factory Line ID: {{ order.orderDetails.productionLineId }}</li>
+        <li>Product Code: {{ order.orderDetails.productCode }}</li>
+        <li>Product Description: {{ order.orderDetails.productDescription}}</li>
+        <li>PO Number: {{ order.orderDetails.poNumber }}</li>
+        <li>Expected Start Date: {{ order.orderDetails.expectedStartDate }}</li>
+      </ul>
+     
+    </div>
+  </div>
+
