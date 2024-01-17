@@ -24,7 +24,7 @@
         </div>
         <div>
           <label for="serialNumbers">Serial Numbers</label>
-          <input id="serialNumbers" type="text" placeholder="" formControlName="serialNumbers">
+          <textarea id="serialNumbers" type="text" placeholder="" formControlName="serialNumbers"></textarea>
         </div>
         <div>
           <label for="templateId">Template ID</label>
@@ -32,6 +32,7 @@
         
       </div>
       </div>
+      <button type="button" (click)="addProduct()">Add a new product</button>
     </div>
 
     <h2>order details:</h2>

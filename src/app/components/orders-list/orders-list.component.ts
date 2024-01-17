@@ -43,10 +43,6 @@ export class OrdersListComponent implements OnInit{
   constructor(private crud:CrudService){
   }
 
-  get products(): FormArray {
-    return this.addOrderForm.get('products') as FormArray;
-  }
-  
   ngOnInit():void{
     this.orderObj= new Order();
     this.orderArr=[];
@@ -64,6 +60,8 @@ export class OrdersListComponent implements OnInit{
     )
   }
 
+
+  
   addOrder() {
       const formData = this.addOrderForm.value as Partial<Order>;
   
@@ -79,6 +77,7 @@ export class OrdersListComponent implements OnInit{
         res => {
           this.orderArr.push(res);
           this.addOrderForm.reset();
+          this.openForm();
         },
         err => {
           alert(err);
@@ -109,4 +108,19 @@ openForm(){
   this.formClosed=!this.formClosed;
   console.log(this.formClosed)
 }
+get products(): FormArray {
+  return this.addOrderForm.get('products') as FormArray;
+}
+addProduct() {
+  const productForm = new FormGroup({
+    gtin: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z0-9 _-]+$')]),
+    quantity: new FormControl(0, [Validators.required]),
+    serialNumberType: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z0-9 _-]+$')]),
+    serialNumbers: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z0-9 _-]+$')]),
+    templateId: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z0-9 _-]+$')])
+  });
+
+  this.products.push(productForm);
+}
+
 }

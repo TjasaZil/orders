@@ -158,30 +158,6 @@
         "expectedStartDate": "2024-04-16"
       },
       "id": "a61a"
-    },
-    {
-      "id": "740b",
-      "omsId": "de3",
-      "products": [
-        {
-          "gtin": "123421",
-          "quantity": "3",
-          "serialNumberType": "string",
-          "serialNumbers": "123214324bfd",
-          "templateId": "420"
-        }
-      ],
-      "orderDetails": {
-        "factoryId": "12",
-        "factoryName": "factory",
-        "factoryAddress": "test",
-        "factoryCountry": "testt",
-        "productionLineId": "vfa23",
-        "productCode": "fewf23",
-        "productDescription": "this is a test",
-        "poNumber": "1234",
-        "expectedStartDate": "2023-11-12"
-      }
     }
   ]
 }
