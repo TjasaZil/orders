@@ -20,9 +20,9 @@ export class CrudService {
     return this.http.get<Order[]>(this.orderURL);
   }
   deleteOrder(order:Order):Observable<Order>{
-    return this.http.delete<Order>(this.orderURL + '/' + order.omsId);
+    return this.http.delete<Order>(this.orderURL + '/' + order.id);
   }
   editOrder(order:Order): Observable<Order>{
-    return this.http.put<Order>(this.orderURL + '/' + order. omsId, order);
+    return this.http.put<Order>(this.orderURL + '/' + order.id, order);
   }
 }

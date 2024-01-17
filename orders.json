@@ -28,7 +28,8 @@
         "productDescription": "Product Description 10",
         "poNumber": "PO5050",
         "expectedStartDate": "2024-09-08"
-      }
+      },
+      "id": "1864"
     },
     {
       "omsId": "66159",
@@ -79,81 +80,108 @@
         "productDescription": "Product Description 3",
         "poNumber": "PO1738",
         "expectedStartDate": "2024-06-15"
-      }
       },
-      {
+      "id": "b97a"
+    },
+    {
       "omsId": "43437",
       "products": [
-      {
-      "gtin": "513829",
-      "quantity": 8,
-      "serialNumberType": "Type 1",
-      "serialNumbers": "9183",
-      "templateId": "509"
-      },
-      {
-      "gtin": "350526",
-      "quantity": 6,
-      "serialNumberType": "Type 2",
-      "serialNumbers": "9883",
-      "templateId": "404"
-      }
+        {
+          "gtin": "513829",
+          "quantity": 8,
+          "serialNumberType": "Type 1",
+          "serialNumbers": "9183",
+          "templateId": "509"
+        },
+        {
+          "gtin": "350526",
+          "quantity": 6,
+          "serialNumberType": "Type 2",
+          "serialNumbers": "9883",
+          "templateId": "404"
+        }
       ],
       "orderDetails": {
-      "factoryId": "27",
-      "factoryName": "Factory 9",
-      "factoryAddress": "687 Industrial Road, City 39",
-      "factoryCountry": "Country 5",
-      "productionLineId": "16",
-      "productCode": "P5091",
-      "productDescription": "Product Description 6",
-      "poNumber": "PO3982",
-      "expectedStartDate": "2024-11-01"
-      }
+        "factoryId": "27",
+        "factoryName": "Factory 9",
+        "factoryAddress": "687 Industrial Road, City 39",
+        "factoryCountry": "Country 5",
+        "productionLineId": "16",
+        "productCode": "P5091",
+        "productDescription": "Product Description 6",
+        "poNumber": "PO3982",
+        "expectedStartDate": "2024-11-01"
       },
-      {
+      "id": "4496"
+    },
+    {
       "omsId": "78697",
       "products": [
-      {
-      "gtin": "403764",
-      "quantity": 10,
-      "serialNumberType": "Type 2",
-      "serialNumbers": "5438",
-      "templateId": "531"
-      },
-      {
-      "gtin": "752101",
-      "quantity": 4,
-      "serialNumberType": "Type 2",
-      "serialNumbers": "6978",
-      "templateId": "859"
-      },
-      {
-      "gtin": "248666",
-      "quantity": 1,
-      "serialNumberType": "Type 2",
-      "serialNumbers": "1736",
-      "templateId": "667"
-      },
-      {
-      "gtin": "633771",
-      "quantity": 3,
-      "serialNumberType": "Type 2",
-      "serialNumbers": "3219",
-      "templateId": "375"
-      }
+        {
+          "gtin": "403764",
+          "quantity": 10,
+          "serialNumberType": "Type 2",
+          "serialNumbers": "5438",
+          "templateId": "531"
+        },
+        {
+          "gtin": "752101",
+          "quantity": 4,
+          "serialNumberType": "Type 2",
+          "serialNumbers": "6978",
+          "templateId": "859"
+        },
+        {
+          "gtin": "248666",
+          "quantity": 1,
+          "serialNumberType": "Type 2",
+          "serialNumbers": "1736",
+          "templateId": "667"
+        },
+        {
+          "gtin": "633771",
+          "quantity": 3,
+          "serialNumberType": "Type 2",
+          "serialNumbers": "3219",
+          "templateId": "375"
+        }
       ],
       "orderDetails": {
-      "factoryId": "17",
-      "factoryName": "Factory 6",
-      "factoryAddress": "219 Industrial Road, City 18",
-      "factoryCountry": "Country 5",
-      "productionLineId": "15",
-      "productCode": "P7195",
-      "productDescription": "Product Description 9",
-      "poNumber": "PO6618",
-      "expectedStartDate": "2024-04-16"
+        "factoryId": "17",
+        "factoryName": "Factory 6",
+        "factoryAddress": "219 Industrial Road, City 18",
+        "factoryCountry": "Country 5",
+        "productionLineId": "15",
+        "productCode": "P7195",
+        "productDescription": "Product Description 9",
+        "poNumber": "PO6618",
+        "expectedStartDate": "2024-04-16"
+      },
+      "id": "a61a"
+    },
+    {
+      "id": "740b",
+      "omsId": "de3",
+      "products": [
+        {
+          "gtin": "123421",
+          "quantity": "3",
+          "serialNumberType": "string",
+          "serialNumbers": "123214324bfd",
+          "templateId": "420"
+        }
+      ],
+      "orderDetails": {
+        "factoryId": "12",
+        "factoryName": "factory",
+        "factoryAddress": "test",
+        "factoryCountry": "testt",
+        "productionLineId": "vfa23",
+        "productCode": "fewf23",
+        "productDescription": "this is a test",
+        "poNumber": "1234",
+        "expectedStartDate": "2023-11-12"
       }
-      }
-      ]
-      }
+    }
+  ]
+}

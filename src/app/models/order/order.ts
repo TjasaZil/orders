@@ -1,5 +1,6 @@
 export class Order {
-  omsId: string= '';
+  id?: string='';
+  omsId: string='';
   products: OrderProduct[]= [];
   orderDetails: OrderDetails = new OrderDetails();
 }
@@ -13,9 +14,9 @@ export class OrderProduct {
 }
 
 export class OrderDetails {
-  factoryId: string = '';
-  factoryName: string = '';
-  factoryAddress: string = '';
+  factoryId?: string = '';
+  factoryName?: string = '';
+  factoryAddress                                                                                                                                : string = '';
   factoryCountry: string = '';
   productionLineId: string = '';
   productCode: string = '';
