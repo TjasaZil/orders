@@ -4,7 +4,8 @@ import { AuthService } from "src/app/services/auth/auth.service";
 
 @Component({
   selector: 'app-log-in',
-  template: `<section>
+  template: `<div class="main-container">
+<section>
   <form (submit)="login()" [formGroup]="loginForm" >
     <div>
       <label for="email">Email</label>
@@ -17,7 +18,8 @@ import { AuthService } from "src/app/services/auth/auth.service";
     <button type="submit" >Submit</button>
     <a href="/orders-list">Forgot your password?</a>
   </form>
-</section>`,
+</section>
+  </div>`,
   styleUrls: ['./log-in.component.scss']
 })
 export class LogInComponent {

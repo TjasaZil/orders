@@ -11,6 +11,7 @@ import { FormControl, FormGroup, Validators, FormArray } from "@angular/forms";
 export class OrdersListComponent implements OnInit{
 
   formClosed:boolean=true;
+  modalClosed:boolean=true;
   orderObj :Order = new Order();
   orderArr : Order[]= [];
   addOrderValue: object = {}; 
@@ -85,14 +86,15 @@ export class OrdersListComponent implements OnInit{
       );
   }
   
-  editOrder(){
+  editOrder(){/*
     this.crud.editOrder(this.orderObj).subscribe(
       res=>{
         this.ngOnInit();
       }, err=>{
         alert('Unable to edit the order!')
       }
-    )
+    )*/
+    this.openModal();
   }
 
   deleteOrder(eorder:Order){
@@ -108,6 +110,10 @@ openForm(){
   this.formClosed=!this.formClosed;
   console.log(this.formClosed)
 }
+openModal(){
+  this.modalClosed=!this.modalClosed;
+  console.log(this.modalClosed)
+}
 get products(): FormArray {
   return this.addOrderForm.get('products') as FormArray;
 }
@@ -122,5 +128,7 @@ addProduct() {
 
   this.products.push(productForm);
 }
+
+
 
 }

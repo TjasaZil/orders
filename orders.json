@@ -158,6 +158,61 @@
         "expectedStartDate": "2024-04-16"
       },
       "id": "a61a"
+    },
+    {
+      "id": "b186",
+      "omsId": "de3",
+      "products": [
+        {
+          "gtin": "123421",
+          "quantity": "2",
+          "serialNumberType": "string",
+          "serialNumbers": "nwtzen, gvreqgvq, vbretqwbwq, bqterwb, ",
+          "templateId": "123"
+        },
+        {
+          "gtin": " fadvbeq",
+          "quantity": "5",
+          "serialNumberType": "gwfrge",
+          "serialNumbers": "gewrg, greqg, gregreq",
+          "templateId": "234"
+        }
+      ],
+      "orderDetails": {
+        "factoryId": "",
+        "factoryName": "",
+        "factoryAddress": "",
+        "factoryCountry": "",
+        "productionLineId": "",
+        "productCode": "",
+        "productDescription": "",
+        "poNumber": "",
+        "expectedStartDate": ""
+      }
+    },
+    {
+      "id": "87a9",
+      "omsId": "de3123",
+      "products": [
+        {
+          "gtin": "123421",
+          "quantity": 0,
+          "serialNumberType": "string",
+          "serialNumbers": "fwaef",
+          "templateId": "cvw"
+        }
+      ],
+      "orderDetails": {
+        "factoryId": "vcqw",
+        "factoryName": "vcqw",
+        "factoryAddress": "vqewvrb",
+        "factoryCountry": "rgbgrf",
+        "productionLineId": "vAV",
+        "productCode": "",
+        "productDescription": "VERVBEAV",
+        "poNumber": "EABV",
+        "expectedStartDate": "VE"
+      }
     }
   ]
 }

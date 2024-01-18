@@ -1,7 +1,7 @@
 
 <button *ngIf="this.formClosed" (click)="openForm()">add new order</button>
-<div *ngIf="!this.formClosed">
-  <form (submit)="addOrder()" [formGroup]="addOrderForm" >
+<div *ngIf="this.formClosed" class="popup-background">
+  <form (submit)="addOrder()" [formGroup]="addOrderForm" class="popup">
     <div>
       <label for="omsId">oms ID</label>
       <input id="omsId" type="text" placeholder="" formControlName="omsId">
@@ -80,7 +80,7 @@
     <button (click)="openForm()">close order</button> 
 </div>
 
- <div  class="orders-list" *ngFor="let order of orderArr">
+ <div  class="orders-list main-container" *ngFor="let order of orderArr">
 
     <h3>Order ID: {{ order.omsId }}</h3>
     <div>
@@ -103,21 +103,24 @@
         </li>
       </ul>
     </div>
-    <div>
-      <h4>Order Details:</h4>
+    <div >
+      <h4 >Order Details:</h4>
       <ul>
-        <li>Factory ID: {{ order.orderDetails.factoryId }}</li>
-        <li>Factory Name: {{ order.orderDetails.factoryName }}</li>
-        <li>Factory Address: {{ order.orderDetails.factoryAddress }}</li>
-        <li>Factory Country: {{ order.orderDetails.factoryCountry }}</li>
-        <li>Factory Line ID: {{ order.orderDetails.productionLineId }}</li>
-        <li>Product Code: {{ order.orderDetails.productCode }}</li>
-        <li>Product Description: {{ order.orderDetails.productDescription}}</li>
-        <li>PO Number: {{ order.orderDetails.poNumber }}</li>
-        <li>Expected Start Date: {{ order.orderDetails.expectedStartDate }}</li>
+        <li >Factory ID: {{ order.orderDetails.factoryId || 'no data'}}</li>
+        <li>Factory Name: {{ order.orderDetails.factoryName || 'no data' }}</li>
+        <li>Factory Address: {{ order.orderDetails.factoryAddress || 'no data' }}</li>
+        <li>Factory Country: {{ order.orderDetails.factoryCountry || 'no data' }}</li>
+        <li>Factory Line ID: {{ order.orderDetails.productionLineId || 'no data' }}</li>
+        <li>Product Code: {{ order.orderDetails.productCode || 'no data' }}</li>
+        <li>Product Description: {{ order.orderDetails.productDescription || 'no data'}}</li>
+        <li>PO Number: {{ order.orderDetails.poNumber || 'no data' }}</li>
+        <li>Expected Start Date: {{ order.orderDetails.expectedStartDate || 'no data' }}</li>
       </ul>
-     
     </div>
+    <div *ngIf="!modalClosed">
+      <app-edit-order-form></app-edit-order-form>
+    </div>
+    
     <button (click)="editOrder()">edit order</button>
     <button (click)="deleteOrder(order)">delete order</button>
   </div>
