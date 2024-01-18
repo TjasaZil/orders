@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-edit-order-form',
@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class EditOrderFormComponent {
 
+  @Output() closingModal = new EventEmitter<boolean>();
+
+  closeModal(){
+    this.closingModal.emit(true)
+    
+  }
 }
