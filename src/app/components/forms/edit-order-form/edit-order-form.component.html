@@ -1,5 +1,5 @@
-<div class="popup-background">
-  <!--<form class="popup">
+<!--<div class="popup-background"> 
+  <form (submit)="editOrder()" [formGroup]="editOrderForm" class="popup">
     <div>
       <label for="omsId">oms ID</label>
       <input id="omsId" type="text" placeholder="" formControlName="omsId">
@@ -7,7 +7,7 @@
     <h2>products:</h2>
 
     <div formArrayName="products">
-      <div>
+      <div *ngFor="let productFormGroup of products.controls; let i = index" [formGroupName]="i">
         <div>
           <label for="gtin">GTIN</label>
           <input id="gtin" type="text" placeholder="" formControlName="gtin">
@@ -73,8 +73,7 @@
       </div>
     </div>
     
-    <button type="submit" >add order</button>
-  </form>-->
-  <p class="popup">popup works</p>
-    <button (click)="closeModal()">close order</button> 
-</div>
+    <button type="submit" >edit order</button>
+  </form>
+  <button (click)="closeModal()">close order</button> 
+</div>-->

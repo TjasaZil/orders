@@ -15,8 +15,6 @@ export class OrdersListComponent implements OnInit{
   modalEditClosed:boolean=true;
   orderObj :Order = new Order();
   orderArr : Order[]= [];
-  addOrderValue: object = {}; 
-
 
   
   
@@ -53,8 +51,8 @@ export class OrdersListComponent implements OnInit{
     
   }
 
-  editOrder(){
-    this.crud.editOrder(this.orderObj).subscribe(
+  editOrder(order: Order){
+    this.crud.editOrder(order).subscribe(
       res=>{
         this.ngOnInit();
       }, err=>{

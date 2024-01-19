@@ -40,7 +40,7 @@
         <li>Expected Start Date: {{ order.orderDetails.expectedStartDate || 'no data' }}</li>
       </ul>
     </div>
-    <app-edit-order-form *ngIf="!this.modalEditClosed" (closingModal)="handleEditModalClose($event)"></app-edit-order-form>
+  <!-- <app-edit-order-form *ngIf="!this.modalEditClosed" [order]="this.orderObj" (closingModal)="handleEditModalClose($event)" (editExistingOrder)="editOrder(order)"></app-edit-order-form>-->
     
     <button (click)="openEditModal()">edit order</button>
     <button (click)="deleteOrder(order)">delete order</button>
