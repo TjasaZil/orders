@@ -14,6 +14,9 @@ export class OrdersListComponent implements OnInit{
   
   modalAddClosed:boolean=true;
   modalEditClosed:boolean=true;
+  //orderOpened:boolean=false;
+  openedOrderId: string | null |undefined = null;
+  chosenFunctionality:boolean=false;
   orderObj :Order = new Order();
   orderArr : Order[]= [];
   selectedOrderForEdit: Order | undefined;
@@ -94,5 +97,19 @@ handleEditModalClose(isModalClosed: boolean): void {
 
 LogOut(){
   this.router.navigate(['/'], { replaceUrl: true });
+}
+openOrder(Id? : string){
+  //this.orderOpened=!this.orderOpened
+  if (this.openedOrderId === Id) {
+    // If the clicked order is already open, close it
+    this.openedOrderId = '';
+  } else {
+    // Otherwise, open the clicked order
+    this.openedOrderId = Id;
+  }
+}
+
+chooseFunctionality(){
+  this.chosenFunctionality=!this.chosenFunctionality
 }
 }
