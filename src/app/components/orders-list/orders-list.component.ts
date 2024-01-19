@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from "@angular/router";
 import { Order, OrderDetails } from "src/app/models/order/order";
 import { CrudService } from "src/app/service/crud.service";
 import { FormControl, FormGroup, Validators, FormArray } from "@angular/forms";
@@ -19,7 +20,7 @@ export class OrdersListComponent implements OnInit{
   selectedOrderForEdit: Order | undefined;
   
   
-  constructor(private crud:CrudService){
+  constructor(private crud:CrudService, private router:Router){
   }
 
   ngOnInit():void{
@@ -92,5 +93,9 @@ handleEditModalClose(isModalClosed: boolean): void {
   this.modalEditClosed = isModalClosed;
   this.modalAddClosed = isModalClosed;
   this.selectedOrderForEdit = undefined; // Reset for edit scenario
+}
+
+LogOut(){
+  this.router.navigate(['/'], { replaceUrl: true });
 }
 }

@@ -1,4 +1,5 @@
 
+<button (click)="LogOut()">Log Out</button>
 <button *ngIf="this.modalAddClosed" (click)="openAddModal()">add new order</button>
 
 <app-add-order-form 
@@ -9,7 +10,7 @@
  
  <div  class="orders-list main-container" *ngFor="let order of orderArr">
 
-    <h3>Order ID: {{ order.omsId }}</h3>
+    <h3>Oms ID: {{ order.omsId }}</h3>
     <div>
       <h4>Products:</h4>
       <ul *ngFor="let product of order.products">
@@ -44,7 +45,6 @@
         <li>Expected Start Date: {{ order.orderDetails.expectedStartDate || 'no data' }}</li>
       </ul>
     </div>
-  <!-- <app-edit-order-form *ngIf="!this.modalEditClosed" [order]="this.orderObj" (closingModal)="handleEditModalClose($event)" (editExistingOrder)="editOrder(order)"></app-edit-order-form>-->
   <app-add-order-form 
   *ngIf="!modalEditClosed"
   [editOrder]="selectedOrderForEdit"
