@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
-import { Order, OrderDetails } from "src/app/models/order/order";
+import { Order } from "src/app/models/order/order";
 import { CrudService } from "src/app/service/crud.service";
-import { FormControl, FormGroup, Validators, FormArray } from "@angular/forms";
-
 
 @Component({
   selector: 'app-orders-list',

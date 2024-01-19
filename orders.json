@@ -19,14 +19,14 @@
         }
       ],
       "orderDetails": {
-        "factoryId": "96",
+        "factoryId": "969",
         "factoryName": "Factory 9",
         "factoryAddress": "883 Industrial Road, City 48",
         "factoryCountry": "Country 2",
         "productionLineId": "9",
         "productCode": "P2688",
         "productDescription": "Product Description 10",
-        "poNumber": "PO5050",
+        "poNumber": "PO50505",
         "expectedStartDate": "2024-09-08"
       },
       "id": "1864"
@@ -158,6 +158,30 @@
         "expectedStartDate": "2024-04-16"
       },
       "id": "a61a"
+    },
+    {
+      "id": "af6e",
+      "omsId": "",
+      "products": [
+        {
+          "gtin": "",
+          "quantity": 0,
+          "serialNumberType": "",
+          "serialNumbers": "",
+          "templateId": ""
+        }
+      ],
+      "orderDetails": {
+        "factoryId": "",
+        "factoryName": "",
+        "factoryAddress": "",
+        "factoryCountry": "",
+        "productionLineId": "",
+        "productCode": "",
+        "productDescription": "",
+        "poNumber": "",
+        "expectedStartDate": ""
+      }
     }
   ]
 }
