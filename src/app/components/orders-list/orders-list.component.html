@@ -1,49 +1,58 @@
 
-<button (click)="LogOut()">Log Out</button>
-<button *ngIf="this.modalAddClosed" (click)="openAddModal()">add new order</button>
+<div class="main-container">
 
-<app-add-order-form 
+  <nav class="order-list-nav">
+    <img src="../../../assets/icons/logo-light.svg" alt="" class=""/>
+    <div>
+      <button *ngIf="this.modalAddClosed" (click)="openAddModal()" class="btn-solid">New order</button>
+      <button (click)="LogOut()" class="btn-outline">Log out</button>
+    </div>
+  </nav>
+
+  <app-add-order-form 
   *ngIf="!modalAddClosed"
   (closingModal)="handleEditModalClose($event)"
   (addNewOrder)="addOrder($event)">
 </app-add-order-form>
  
- <div  class="orders-list main-container" *ngFor="let order of orderArr">
-
-    <h3>Oms ID: {{ order.omsId }}</h3>
-    <div>
-      <h4>Products:</h4>
-      <ul *ngFor="let product of order.products">
-        <li >
-          GTIN: {{ product.gtin }}
-        </li>
-        <li >
-          Quantity: {{ product.quantity }}
-        </li>
-        <li >
-          Serial Number Type: {{ product.serialNumberType}}
-        </li>
-        <li >
-          Serial Numbers: {{ product.serialNumbers }}
-        </li>
-        <li >
-          Template ID: {{ product.templateId }}
-        </li>
-      </ul>
-    </div>
-    <div >
-      <h4 >Order Details:</h4>
-      <ul>
-        <li >Factory ID: {{ order.orderDetails.factoryId || 'no data'}}</li>
-        <li>Factory Name: {{ order.orderDetails.factoryName || 'no data' }}</li>
-        <li>Factory Address: {{ order.orderDetails.factoryAddress || 'no data' }}</li>
-        <li>Factory Country: {{ order.orderDetails.factoryCountry || 'no data' }}</li>
-        <li>Factory Line ID: {{ order.orderDetails.productionLineId || 'no data' }}</li>
-        <li>Product Code: {{ order.orderDetails.productCode || 'no data' }}</li>
-        <li>Product Description: {{ order.orderDetails.productDescription || 'no data'}}</li>
-        <li>PO Number: {{ order.orderDetails.poNumber || 'no data' }}</li>
-        <li>Expected Start Date: {{ order.orderDetails.expectedStartDate || 'no data' }}</li>
-      </ul>
+ <div  class="orders-list" *ngFor="let order of orderArr">
+<div class="orders-list-container">
+  <h3>Oms ID: {{ order.omsId }}</h3>
+  <div>
+    <h4>Products:</h4>
+    <ul *ngFor="let product of order.products">
+      <li >
+        GTIN: {{ product.gtin }}
+      </li>
+      <li >
+        Quantity: {{ product.quantity }}
+      </li>
+      <li >
+        Serial Number Type: {{ product.serialNumberType}}
+      </li>
+      <li >
+        Serial Numbers: {{ product.serialNumbers }}
+      </li>
+      <li >
+        Template ID: {{ product.templateId }}
+      </li>
+    </ul>
+  </div>
+  <div >
+    <h4 >Order Details:</h4>
+    <ul>
+      <li >Factory ID: {{ order.orderDetails.factoryId || 'no data'}}</li>
+      <li>Factory Name: {{ order.orderDetails.factoryName || 'no data' }}</li>
+      <li>Factory Address: {{ order.orderDetails.factoryAddress || 'no data' }}</li>
+      <li>Factory Country: {{ order.orderDetails.factoryCountry || 'no data' }}</li>
+      <li>Factory Line ID: {{ order.orderDetails.productionLineId || 'no data' }}</li>
+      <li>Product Code: {{ order.orderDetails.productCode || 'no data' }}</li>
+      <li>Product Description: {{ order.orderDetails.productDescription || 'no data'}}</li>
+      <li>PO Number: {{ order.orderDetails.poNumber || 'no data' }}</li>
+      <li>Expected Start Date: {{ order.orderDetails.expectedStartDate || 'no data' }}</li>
+    </ul>
+</div>
+    
     </div>
   <app-add-order-form 
   *ngIf="!modalEditClosed"
@@ -56,4 +65,9 @@
 
     <button (click)="deleteOrder(order)">delete order</button>
   </div>
+</div>
+
+
+
+
 

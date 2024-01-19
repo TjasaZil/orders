@@ -4,21 +4,25 @@ import { AuthService } from "src/app/services/auth/auth.service";
 
 @Component({
   selector: 'app-log-in',
-  template: `<div class="main-container">
-<section>
+  template: `<section class="login-component">
+    
+      <div class="login-image"></div>
+      
+<div class="login-form-container">
+  <img src="../../../assets/icons/logo-dark.svg" alt="" class="login-logo"/>
   <form (submit)="login()" [formGroup]="loginForm" autocomplete="off" >
     <div>
-      <label for="email" class="p-inter-medium">Email</label>
+      <label for="email" class="p-advent-semibold2">Email</label>
       <input id="email" type="email" placeholder="email" formControlName="email">
     </div>
     <div>
-      <label for="password" class="p-advent-bold">Password</label>
+      <label for="password" class="p-advent-semibold2">Password</label>
       <input id="password" type="password" placeholder="password" formControlName="password"/>
     </div>
-    <button type="submit" class="btn-solid">Submit</button>
+    <button type="submit" class="btn-solid login-btn">Submit</button>
   </form>
-</section>
-  </div>`,
+</div>
+  </section>`,
   styleUrls: ['./log-in.component.scss']
 })
 export class LogInComponent {

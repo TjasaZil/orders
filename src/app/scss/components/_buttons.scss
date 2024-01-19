@@ -9,6 +9,7 @@ background-color: $background;
 color:$text;
 border: $border;
 transition: background-color 1s;
+cursor: pointer;
 }
 .btn-solid{
 @include btn($main-dark-orange, $text-light, none);
