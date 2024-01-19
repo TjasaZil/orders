@@ -1,7 +1,11 @@
 
 <button *ngIf="this.modalAddClosed" (click)="openAddModal()">add new order</button>
 
-  <app-add-order-form *ngIf="!this.modalAddClosed" (closingModal)="handleAddModalClose($event)" (addNewOrder)="addOrder($event)"></app-add-order-form>
+<app-add-order-form 
+  *ngIf="!modalAddClosed"
+  (closingModal)="handleEditModalClose($event)"
+  (addNewOrder)="addOrder($event)">
+</app-add-order-form>
  
  <div  class="orders-list main-container" *ngFor="let order of orderArr">
 
@@ -41,8 +45,15 @@
       </ul>
     </div>
   <!-- <app-edit-order-form *ngIf="!this.modalEditClosed" [order]="this.orderObj" (closingModal)="handleEditModalClose($event)" (editExistingOrder)="editOrder(order)"></app-edit-order-form>-->
-    
-    <button (click)="openEditModal()">edit order</button>
+  <app-add-order-form 
+  *ngIf="!modalEditClosed"
+  [editOrder]="selectedOrderForEdit"
+  (closingModal)="handleEditModalClose($event)"
+  (editExistingOrder)="editOrder($event)">
+</app-add-order-form>
+
+  <button (click)="openEditModal(order)">edit order</button>
+
     <button (click)="deleteOrder(order)">delete order</button>
   </div>
 

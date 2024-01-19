@@ -3,6 +3,7 @@ import { Order, OrderDetails } from "src/app/models/order/order";
 import { CrudService } from "src/app/service/crud.service";
 import { FormControl, FormGroup, Validators, FormArray } from "@angular/forms";
 
+
 @Component({
   selector: 'app-orders-list',
   templateUrl: './orders-list.component.html',
@@ -15,7 +16,7 @@ export class OrdersListComponent implements OnInit{
   modalEditClosed:boolean=true;
   orderObj :Order = new Order();
   orderArr : Order[]= [];
-
+  selectedOrderForEdit: Order | undefined;
   
   
   constructor(private crud:CrudService){
@@ -43,7 +44,10 @@ export class OrdersListComponent implements OnInit{
     this.crud.addOrder(order).subscribe(
       res=>{
         this.orderArr.push(res);
-    this.openAddModal();
+       /* this.modalAddClosed = true;
+        this.handleEditModalClose(true);*/
+        console.log(this.modalAddClosed)
+   
       },err=>{
         alert('Unable to add the order!')
       }
@@ -71,21 +75,22 @@ export class OrdersListComponent implements OnInit{
     )
   }
 
-/** handling modal states */
+openAddModal() {
+  this.modalAddClosed = false;
+}
 
-openAddModal(){
-  this.modalAddClosed=!this.modalAddClosed;
-  console.log(this.modalAddClosed)
+openEditModal(order: Order) {
+  this.selectedOrderForEdit = order;
+  this.modalEditClosed = false;
 }
-openEditModal(){
-  this.modalEditClosed=!this.modalEditClosed;
-  console.log(this.modalEditClosed)
-}
+
 handleAddModalClose(isModalClosed: boolean): void {
-  this.modalAddClosed = isModalClosed; 
+  this.modalAddClosed = isModalClosed;
+  this.selectedOrderForEdit = undefined; // Reset for edit scenario
 }
 handleEditModalClose(isModalClosed: boolean): void {
-  this.modalEditClosed = isModalClosed; 
+  this.modalEditClosed = isModalClosed;
+  this.modalAddClosed = isModalClosed;
+  this.selectedOrderForEdit = undefined; // Reset for edit scenario
 }
-
 }

@@ -160,11 +160,11 @@
       "id": "a61a"
     },
     {
-      "id": "cfec",
-      "omsId": " DG",
+      "id": "9d8d",
+      "omsId": "this order works",
       "products": [
         {
-          "gtin": "",
+          "gtin": "123421",
           "quantity": 0,
           "serialNumberType": "",
           "serialNumbers": "",
