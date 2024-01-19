@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
-import { Order, OrderDetails } from "src/app/models/order/order";
+import { Order} from "src/app/models/order/order";
 import { CrudService } from "src/app/service/crud.service";
-import { FormControl, FormGroup, Validators, FormArray } from "@angular/forms";
 
 
 @Component({
@@ -45,8 +44,6 @@ export class OrdersListComponent implements OnInit{
     this.crud.addOrder(order).subscribe(
       res=>{
         this.orderArr.push(res);
-       /* this.modalAddClosed = true;
-        this.handleEditModalClose(true);*/
         console.log(this.modalAddClosed)
    
       },err=>{

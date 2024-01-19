@@ -1,10 +1,15 @@
+@import "./scss/variables/colours";
+@import "./scss/variables/typography";
+@import "./scss/components/buttons";
+@import "./scss/components/input";
+
 *::before,
 *::after {
   box-sizing: border-box;
 }
 * {
   border: none;
-  outline: 1px solid red;
+  /*outline: 1px solid red;*/
 }
 img {
   display: block;

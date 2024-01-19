@@ -1,0 +1,39 @@
+@mixin btn($background, $text, $border){
+  display: inline-flex;
+padding: 8px 23px;
+justify-content: center;
+align-items: center;
+gap: 10px;
+border-radius: 6px;
+background-color: $background;
+color:$text;
+border: $border;
+transition: background-color 1s;
+}
+.btn-solid{
+@include btn($main-dark-orange, $text-light, none);
+  &:hover{
+    @include btn($main-gray, $text-light, none); 
+  }
+  &:focus{
+    @include btn($text-dark, $text-light, none);
+  }
+}
+.btn-outline{
+  @include btn(transparent, $text-dark, 1px solid $main-dark-orange);
+  &:hover{
+    @include btn($bg-white, $text-dark, 1px solid $main-gray);
+  }
+  &:focus{
+    @include btn($text-dark, $text-light, 1px solid $text-dark);
+  }
+}
+.btn-light{
+  @include btn(transparent, $text-dark, none);
+  &:hover{
+    @include btn(transparent, $main-gray, none); 
+  }
+  &:focus{
+    @include btn(transparent, $main-dark-orange, none);
+  }
+}
