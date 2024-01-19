@@ -158,30 +158,6 @@
         "expectedStartDate": "2024-04-16"
       },
       "id": "a61a"
-    },
-    {
-      "id": "9d8d",
-      "omsId": "this order works",
-      "products": [
-        {
-          "gtin": "123421",
-          "quantity": 0,
-          "serialNumberType": "",
-          "serialNumbers": "",
-          "templateId": ""
-        }
-      ],
-      "orderDetails": {
-        "factoryId": "",
-        "factoryName": "",
-        "factoryAddress": "",
-        "factoryCountry": "",
-        "productionLineId": "",
-        "productCode": "",
-        "productDescription": "",
-        "poNumber": "",
-        "expectedStartDate": ""
-      }
     }
   ]
 }
