@@ -1,57 +1,150 @@
-
 <div class="main-container">
-<!-- navigation -->
+  <!-- navigation -->
   <nav class="order-list-nav">
-    <img src="../../../assets/icons/logo-light.svg" alt="" class=""/>
+    <img src="../../../assets/icons/logo-light.svg" alt="" class="" />
     <div class="nav-buttons">
-      <button *ngIf="this.modalAddClosed" (click)="openAddModal()" class="btn-solid">New order</button>
+      <button
+        *ngIf="this.modalAddClosed"
+        (click)="openAddModal()"
+        class="btn-solid"
+      >
+        New order
+      </button>
       <button (click)="LogOut()" class="btn-outline">Log out</button>
     </div>
   </nav>
 
-  <app-add-order-form 
-  *ngIf="!modalAddClosed"
-  (closingModal)="handleEditModalClose($event)"
-  (addNewOrder)="addOrder($event)">
-</app-add-order-form>
- 
- <div  class="orders">
-  <!-- title -->
-  <h1 class="h-advent-semibold">Orders list</h1>
-  <div class="orange-line"></div>
-  <div class="orders-list" >
-    <div class="orders-list-container" *ngFor="let order of orderArr">
-      <div class="pre-expand-data">
-        <div class="order-small-data">
-          <div class="order-small-data-container">
-            <span class="p-advent-bold">Oms ID:</span>
-            <p class="p-inter-light"> #{{ order.omsId }}</p>
+  <app-add-order-form
+    *ngIf="!modalAddClosed"
+    (closingModal)="handleEditModalClose($event)"
+    (addNewOrder)="addOrder($event)"
+  >
+  </app-add-order-form>
+
+  <div class="orders">
+    <!-- title -->
+    <h1 class="h-advent-semibold">Orders list</h1>
+    <div class="orange-line"></div>
+    <div class="orders-list">
+      <div class="orders-list-container" *ngFor="let order of orderArr">
+        <div class="pre-expand-data">
+          <div class="order-small-data">
+            <div class="order-small-data-container">
+              <span class="p-advent-bold">Oms ID:</span>
+              <p class="p-inter-light">#{{ order.omsId }}</p>
+            </div>
+            <div
+              *ngIf="openedOrderId !== order.id"
+              class="order-small-data-container"
+            >
+              <span class="p-advent-bold">Products</span>
+              <p class="p-inter-light">
+                Product quantity: {{ order.products.length }}
+              </p>
+            </div>
+            <div
+              *ngIf="openedOrderId !== order.id"
+              class="order-small-data-container"
+            >
+              <span class="p-advent-bold">Order details</span>
+              <p class="p-inter-light">
+                Factory ID: {{ order.orderDetails.factoryId || "no data" }}
+              </p>
+            </div>
           </div>
-          <div  class="order-small-data-container">
-            <span class="p-advent-bold">Products</span>
-            <p class="p-inter-light">Product quantity: {{ order.products.length }}</p>
-          </div>
-          <div class="order-small-data-container">
-            <span class="p-advent-bold">Order details</span>
-            <p class="p-inter-light">Factory ID: {{ order.orderDetails.factoryId || 'no data'}}</p>
+          <div class="order-buttons">
+            <button>finished</button>
+            <img
+              src="../../../assets/icons/dots.svg"
+              alt=""
+              class=""
+              (click)="chooseFunctionality()"
+            />
+
+            <button (click)="openOrder(order?.id)">
+              <img
+                *ngIf="openedOrderId !== order.id"
+                src="../../../assets/icons/arrow-gray-outline-right.svg"
+                alt=""
+                class=""
+              />
+              <img
+                *ngIf="openedOrderId === order.id"
+                src="../../../assets/icons/arrow-gray-outline-down.svg"
+                alt=""
+                class=""
+              />
+            </button>
           </div>
         </div>
-              <div class="order-buttons">
-        <button>finished</button>
-        <img src="../../../assets/icons/dots.svg" alt="" class="" (click)="chooseFunctionality()"/>
-
-        <button (click)="openOrder(order?.id)">
-          <img *ngIf="openedOrderId !== order.id"  src="../../../assets/icons/arrow-gray-outline-right.svg" alt="" class="" />
-          <img *ngIf="openedOrderId === order.id" src="../../../assets/icons/arrow-gray-outline-down.svg" alt="" class="" />
-        </button>
-         
-        
+        <div class="post-expand-data">
+          <!-- products *ngIf="openedOrderId === order.id"-->
+          <div class="opened-products">
+            <h4>Products: ( {{ order.products.length }} )</h4>
+            <div class="opened-product-slider">
+              <div class="opened-products-list">
+                <ul *ngFor="let product of order.products">
+                  <li>GTIN: {{ product.gtin }}</li>
+                  <li>Quantity: {{ product.quantity }}</li>
+                  <li>Serial Number Type: {{ product.serialNumberType }}</li>
+                  <li>Serial Numbers: {{ product.serialNumbers }}</li>
+                  <li>Template ID: {{ product.templateId }}</li>
+                </ul>
               </div>
-      </div>
-<div *ngIf="openedOrderId === order.id" class="post-expand-data">
-<p>opened</p>
-</div>
-      <!--<h3>Oms ID: {{ order.omsId }}</h3>
+              <img
+                *ngIf="order.products.length > 3"
+                src="../../../assets/icons/arrow-gray-full-right.svg"
+                alt=""
+                class=""
+              />
+            </div>
+          </div>
+          <!-- order details -->
+          <div class="opened-order-details">
+            <h4>Order Details:</h4>
+            <div class="opened-order-data">
+              <ul class="opened-order-data-list">
+                <li>
+                  Factory ID: {{ order.orderDetails.factoryId || "no data" }}
+                </li>
+                <li>
+                  Factory Name:
+                  {{ order.orderDetails.factoryName || "no data" }}
+                </li>
+                <li>
+                  Factory Address:
+                  {{ order.orderDetails.factoryAddress || "no data" }}
+                </li>
+                <li>
+                  Factory Country:
+                  {{ order.orderDetails.factoryCountry || "no data" }}
+                </li>
+                <li>
+                  Factory Line ID:
+                  {{ order.orderDetails.productionLineId || "no data" }}
+                </li>
+              </ul>
+              <ul class="opened-order-data-list">
+                <li>
+                  Product Code:
+                  {{ order.orderDetails.productCode || "no data" }}
+                </li>
+                <li>
+                  Product Description:
+                  {{ order.orderDetails.productDescription || "no data" }}
+                </li>
+                <li>
+                  PO Number: {{ order.orderDetails.poNumber || "no data" }}
+                </li>
+                <li>
+                  Expected Start Date:
+                  {{ order.orderDetails.expectedStartDate || "no data" }}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!--<h3>Oms ID: {{ order.omsId }}</h3>
       <div>
         <h4>Products:</h4>
         <ul *ngFor="let product of order.products">
@@ -87,23 +180,19 @@
         </ul>
     </div>
   -->
-       
 
-  <app-add-order-form 
-  *ngIf="!modalEditClosed"
-  [editOrder]="selectedOrderForEdit"
-  (closingModal)="handleEditModalClose($event)"
-  (editExistingOrder)="editOrder($event)">
-</app-add-order-form>
+        <app-add-order-form
+          *ngIf="!modalEditClosed"
+          [editOrder]="selectedOrderForEdit"
+          (closingModal)="handleEditModalClose($event)"
+          (editExistingOrder)="editOrder($event)"
+        >
+        </app-add-order-form>
 
-  <!--<button (click)="openEditModal(order)">edit order</button>
+        <!--<button (click)="openEditModal(order)">edit order</button>
 
     <button (click)="deleteOrder(order)">delete order</button>-->
+      </div>
+    </div>
   </div>
 </div>
-</div>
-</div>
-
-
-
-
