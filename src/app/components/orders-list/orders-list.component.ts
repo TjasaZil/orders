@@ -15,7 +15,7 @@ export class OrdersListComponent implements OnInit {
   openDeleteModal: boolean = false;
   //orderOpened:boolean=false;
   openedOrderId: string | null | undefined = null;
-  chosenFunctionality: boolean = false;
+  chosenFunctionality: string | null | undefined = null;
   orderObj: Order = new Order();
   orderArr: Order[] = [];
   selectedOrderForEdit: Order | undefined;
@@ -107,7 +107,8 @@ export class OrdersListComponent implements OnInit {
     }
   }
 
-  chooseFunctionality() {
-    this.chosenFunctionality = !this.chosenFunctionality;
+  chooseFunctionality(Id?: string) {
+    if (this.chosenFunctionality === Id) this.chosenFunctionality = '';
+    else this.chosenFunctionality = Id;
   }
 }

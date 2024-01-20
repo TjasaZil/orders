@@ -58,11 +58,11 @@
           <div class="order-buttons">
             <button>finished</button>
             <div class="functionality">
-              <button (click)="chooseFunctionality()">
+              <button (click)="chooseFunctionality(order?.id)">
                 <img src="../../../assets/icons/dots.svg" alt="" class="" />
               </button>
               <!--  -->
-              <ul *ngIf="this.chosenFunctionality">
+              <ul *ngIf="chosenFunctionality === order.id">
                 <li>
                   <button (click)="openEditModal(order)">Edit order</button>
                 </li>
