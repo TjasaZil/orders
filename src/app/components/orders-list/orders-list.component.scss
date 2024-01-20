@@ -159,3 +159,33 @@ ul {
   margin-top: 22px;
   background-color: $main-dark-orange;
 }
+
+.functionality {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  align-items: flex-start;
+
+  ul {
+    width: 109px;
+    position: absolute;
+    top: 0;
+    padding: 15px 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border-radius: 6px;
+    box-shadow: 0px 0px 20px 0px rgba(154, 154, 154, 0.18);
+
+    background-color: white;
+
+    button {
+      @include textbase($text-dark, $advent, 14px, 400, 17px);
+    }
+  }
+}

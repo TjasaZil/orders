@@ -19,100 +19,17 @@
         }
       ],
       "orderDetails": {
-        "factoryId": "96",
+        "factoryId": "969",
         "factoryName": "Factory 9",
         "factoryAddress": "883 Industrial Road, City 48",
         "factoryCountry": "Country 2",
         "productionLineId": "9",
         "productCode": "P2688",
         "productDescription": "Product Description 10",
-        "poNumber": "PO5050",
+        "poNumber": "PO50505",
         "expectedStartDate": "2024-09-08"
       },
       "id": "1864"
-    },
-    {
-      "omsId": "66159",
-      "products": [
-        {
-          "gtin": "703962",
-          "quantity": 3,
-          "serialNumberType": "Type 1",
-          "serialNumbers": "6840",
-          "templateId": "632"
-        },
-        {
-          "gtin": "617274",
-          "quantity": 1,
-          "serialNumberType": "Type 3",
-          "serialNumbers": "7240",
-          "templateId": "290"
-        },
-        {
-          "gtin": "681437",
-          "quantity": 9,
-          "serialNumberType": "Type 3",
-          "serialNumbers": "4440",
-          "templateId": "680"
-        },
-        {
-          "gtin": "419869",
-          "quantity": 6,
-          "serialNumberType": "Type 1",
-          "serialNumbers": "4453",
-          "templateId": "755"
-        },
-        {
-          "gtin": "524828",
-          "quantity": 3,
-          "serialNumberType": "Type 2",
-          "serialNumbers": "7417",
-          "templateId": "729"
-        }
-      ],
-      "orderDetails": {
-        "factoryId": "79",
-        "factoryName": "Factory 5",
-        "factoryAddress": "809 Industrial Road, City 49",
-        "factoryCountry": "Country 5",
-        "productionLineId": "17",
-        "productCode": "P1792",
-        "productDescription": "Product Description 3",
-        "poNumber": "PO1738",
-        "expectedStartDate": "2024-06-15"
-      },
-      "id": "b97a"
-    },
-    {
-      "omsId": "43437",
-      "products": [
-        {
-          "gtin": "513829",
-          "quantity": 8,
-          "serialNumberType": "Type 1",
-          "serialNumbers": "9183",
-          "templateId": "509"
-        },
-        {
-          "gtin": "350526",
-          "quantity": 6,
-          "serialNumberType": "Type 2",
-          "serialNumbers": "9883",
-          "templateId": "404"
-        }
-      ],
-      "orderDetails": {
-        "factoryId": "27",
-        "factoryName": "Factory 9",
-        "factoryAddress": "687 Industrial Road, City 39",
-        "factoryCountry": "Country 5",
-        "productionLineId": "16",
-        "productCode": "P5091",
-        "productDescription": "Product Description 6",
-        "poNumber": "PO3982",
-        "expectedStartDate": "2024-11-01"
-      },
-      "id": "4496"
     },
     {
       "omsId": "78697",

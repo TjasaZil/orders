@@ -20,6 +20,9 @@
     (addNewOrder)="addOrder($event)"
   >
   </app-add-order-form>
+  <!-- modals for delete and status change
+  <app-delete-order *ngIf="openStatusModal"></app-delete-order>
+  <app-change-order-status *ngIf="openDeleteModal"></app-change-order-status>-->
 
   <div class="orders">
     <!-- title -->
@@ -54,12 +57,20 @@
           </div>
           <div class="order-buttons">
             <button>finished</button>
-            <img
-              src="../../../assets/icons/dots.svg"
-              alt=""
-              class=""
-              (click)="chooseFunctionality()"
-            />
+            <div class="functionality">
+              <button (click)="chooseFunctionality()">
+                <img src="../../../assets/icons/dots.svg" alt="" class="" />
+              </button>
+              <!--  -->
+              <ul *ngIf="this.chosenFunctionality">
+                <li>
+                  <button (click)="openEditModal(order)">Edit order</button>
+                </li>
+                <li>
+                  <button (click)="deleteOrder(order)">Delete order</button>
+                </li>
+              </ul>
+            </div>
 
             <button (click)="openOrder(order?.id)">
               <img
@@ -151,10 +162,6 @@
           (editExistingOrder)="editOrder($event)"
         >
         </app-add-order-form>
-
-        <!--<button (click)="openEditModal(order)">edit order</button>
-
-    <button (click)="deleteOrder(order)">delete order</button>-->
       </div>
     </div>
   </div>

@@ -8,6 +8,8 @@ import { LogInComponent } from './components/log-in/log-in.component';
 import { OrdersListComponent } from './components/orders-list/orders-list.component';
 import { AddOrderFormComponent } from './components/forms/add-order-form/add-order-form.component';
 import { EditOrderFormComponent } from './components/forms/edit-order-form/edit-order-form.component';
+import { ChangeOrderStatusComponent } from './components/modals/change-order-status/change-order-status/change-order-status.component';
+import { DeleteOrderComponent } from './components/modals/delete-order/delete-order/delete-order.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { EditOrderFormComponent } from './components/forms/edit-order-form/edit-
     LogInComponent,
     OrdersListComponent,
     AddOrderFormComponent,
-    EditOrderFormComponent
+    EditOrderFormComponent,
+    ChangeOrderStatusComponent,
+    DeleteOrderComponent
   ],
   imports: [
     BrowserModule,
