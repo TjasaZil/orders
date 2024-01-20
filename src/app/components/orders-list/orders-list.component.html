@@ -77,8 +77,8 @@
             </button>
           </div>
         </div>
-        <div class="post-expand-data">
-          <!-- products *ngIf="openedOrderId === order.id"-->
+        <div class="post-expand-data" *ngIf="openedOrderId === order.id">
+          <!-- products -->
           <div class="opened-products">
             <h4>Products: ( {{ order.products.length }} )</h4>
             <div class="opened-product-slider">
@@ -144,43 +144,6 @@
             </div>
           </div>
         </div>
-        <!--<h3>Oms ID: {{ order.omsId }}</h3>
-      <div>
-        <h4>Products:</h4>
-        <ul *ngFor="let product of order.products">
-          <li >
-            GTIN: {{ product.gtin }}
-          </li>
-          <li >
-            Quantity: {{ product.quantity }}
-          </li>
-          <li >
-            Serial Number Type: {{ product.serialNumberType}}
-          </li>
-          <li >
-            Serial Numbers: {{ product.serialNumbers }}
-          </li>
-          <li >
-            Template ID: {{ product.templateId }}
-          </li>
-        </ul>
-      </div>
-      <div >
-        <h4 >Order Details:</h4>
-        <ul>
-          <li >Factory ID: {{ order.orderDetails.factoryId || 'no data'}}</li>
-          <li>Factory Name: {{ order.orderDetails.factoryName || 'no data' }}</li>
-          <li>Factory Address: {{ order.orderDetails.factoryAddress || 'no data' }}</li>
-          <li>Factory Country: {{ order.orderDetails.factoryCountry || 'no data' }}</li>
-          <li>Factory Line ID: {{ order.orderDetails.productionLineId || 'no data' }}</li>
-          <li>Product Code: {{ order.orderDetails.productCode || 'no data' }}</li>
-          <li>Product Description: {{ order.orderDetails.productDescription || 'no data'}}</li>
-          <li>PO Number: {{ order.orderDetails.poNumber || 'no data' }}</li>
-          <li>Expected Start Date: {{ order.orderDetails.expectedStartDate || 'no data' }}</li>
-        </ul>
-    </div>
-  -->
-
         <app-add-order-form
           *ngIf="!modalEditClosed"
           [editOrder]="selectedOrderForEdit"
