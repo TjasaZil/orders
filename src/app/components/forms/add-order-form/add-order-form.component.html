@@ -1,79 +1,190 @@
-<div class="popup-background"> 
-  <form (submit)="newOrder()" [formGroup]="addOrderForm" class="popup">
-    <div>
-      <label for="omsId">oms ID</label>
-      <input id="omsId" type="text" placeholder="" formControlName="omsId">
+<div class="popup-background">
+  <div class="popup">
+    <div class="title-section">
+      <div class="top-title-section">
+        <h4 class="h-advent-semibold">
+          {{ editOrder ? 'Order: {{order.omsId}}' : 'Create new order' }}
+        </h4>
+        <button (click)="closeModal()">
+          <img src="../../../assets/icons/close.svg" alt="" class="" />
+        </button>
+      </div>
+      <div class="orange-line"></div>
     </div>
-    <h2>products:</h2>
+    <form (submit)="newOrder()" [formGroup]="addOrderForm">
+      <!-- Omis Id -->
+      <div class="oms">
+        <span class="form-title" for="omsId">oms ID</span>
+        <div class="gray-line"></div>
+        <input id="omsId" type="text" placeholder="" formControlName="omsId" />
+      </div>
+      <!-- products -->
+      <div class="form-section">
+        <div class="form-title-section">
+          <h2 class="form-title">Products</h2>
+          <div class="gray-line"></div>
+        </div>
+        <div>
+          <!-- add -products -->
+          <div>
+            <button type="button" (click)="addProduct()">
+              Add a new product
+            </button>
+          </div>
+          <!-- inputs for products -->
+          <div formArrayName="products">
+            <div
+              *ngFor="let product of products.controls; let i = index"
+              [formGroupName]="i"
+            >
+              <div class="label-input-positioning">
+                <label for="gtin">GTIN</label>
+                <input
+                  id="gtin"
+                  type="text"
+                  placeholder=""
+                  formControlName="gtin"
+                />
+              </div>
+              <div class="label-input-positioning">
+                <label for="quantity">Quantity</label>
+                <input
+                  id="quantity"
+                  type="text"
+                  placeholder=""
+                  formControlName="quantity"
+                />
+              </div>
+              <div class="label-input-positioning">
+                <label for="serialNumberType">Serial Number Type</label>
+                <input
+                  id="serialNumberType"
+                  type="text"
+                  placeholder=""
+                  formControlName="serialNumberType"
+                />
+              </div>
+              <div class="label-input-positioning">
+                <label for="serialNumbers">Serial Numbers</label>
+                <textarea
+                  id="serialNumbers"
+                  type="text"
+                  placeholder=""
+                  formControlName="serialNumbers"
+                ></textarea>
+              </div>
+              <div class="label-input-positioning">
+                <label for="templateId">Template ID</label>
+                <input
+                  id="templateId"
+                  type="text"
+                  placeholder=""
+                  formControlName="templateId"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- order details -->
+      <div class="form-section">
+        <div class="form-title-section">
+          <h2 class="form-title">Order details:</h2>
+          <div class="gray-line"></div>
+        </div>
 
-    <div formArrayName="products">
-      <div *ngFor="let product of products.controls; let i = index" [formGroupName]="i">
-        <div>
-          <label for="gtin">GTIN</label>
-          <input id="gtin" type="text" placeholder="" formControlName="gtin">
+        <div formGroupName="orderDetails" class="order-details-inputs">
+          <div class="label-input-positioning">
+            <label for="factoryId">Factory ID</label>
+            <input
+              id="factoryId"
+              type="text"
+              placeholder=""
+              formControlName="factoryId"
+            />
+          </div>
+          <div class="label-input-positioning">
+            <label for="factoryName">Factory Name</label>
+            <input
+              id="factoryName"
+              type="text"
+              placeholder=""
+              formControlName="factoryName"
+            />
+          </div>
+          <div class="label-input-positioning">
+            <label for="factoryAddress">Factory Address</label>
+            <input
+              id="factoryAddress"
+              type="text"
+              placeholder=""
+              formControlName="factoryAddress"
+            />
+          </div>
+          <div class="label-input-positioning">
+            <label for="factoryCountry">Factory Country</label>
+            <input
+              id="factoryCountry"
+              type="text"
+              placeholder=""
+              formControlName="factoryCountry"
+            />
+          </div>
+          <div class="label-input-positioning">
+            <label for="productionLineId">Production Line ID</label>
+            <input
+              id="productionLineId"
+              type="text"
+              placeholder=""
+              formControlName="productionLineId"
+            />
+          </div>
+          <div class="label-input-positioning">
+            <label for="productCode">Product Code</label>
+            <input
+              id="productCode"
+              type="text"
+              placeholder=""
+              formControlName="productCode"
+            />
+          </div>
+          <div class="label-input-positioning">
+            <label for="productDescription">Product Description</label>
+            <input
+              id="productDescription"
+              type="text"
+              placeholder=""
+              formControlName="productDescription"
+            />
+          </div>
+          <div class="inputs-and-buttons">
+            <div class="last-inputs">
+              <div class="label-input-positioning">
+                <label for="poNumber">PO Number</label>
+                <input
+                  id="poNumber"
+                  type="text"
+                  placeholder=""
+                  formControlName="poNumber"
+                />
+              </div>
+              <div class="label-input-positioning">
+                <label for="expectedStartDate">Expected Start Date</label>
+                <input
+                  id="expectedStartDate"
+                  type="text"
+                  placeholder=""
+                  formControlName="expectedStartDate"
+                />
+              </div>
+            </div>
+            <div class="modal-buttons">
+              <button (click)="closeModal()" class="btn-outline">Cancel</button>
+              <button type="submit" class="btn-solid">Save changes</button>
+            </div>
+          </div>
         </div>
-        <div>
-          <label for="quantity">Quantity</label>
-          <input id="quantity" type="text" placeholder="" formControlName="quantity">
-        </div>
-        <div>
-          <label for="serialNumberType">Serial Number Type</label>
-          <input id="serialNumberType" type="text" placeholder="" formControlName="serialNumberType">
-        </div>
-        <div>
-          <label for="serialNumbers">Serial Numbers</label>
-          <textarea id="serialNumbers" type="text" placeholder="" formControlName="serialNumbers"></textarea>
-        </div>
-        <div>
-          <label for="templateId">Template ID</label>
-          <input id="templateId" type="text" placeholder="" formControlName="templateId">
-        
       </div>
-      </div>
-      <button type="button" (click)="addProduct()">Add a new product</button>
-    </div>
-
-    <h2>order details:</h2>
-    <div formGroupName="orderDetails"  >
-      <div>
-        <label for="factoryId">Factory ID</label>
-        <input id="factoryId" type="text" placeholder="" formControlName="factoryId">
-      </div>
-      <div>
-        <label for="factoryName">Factory Name</label>
-        <input id="factoryName" type="text" placeholder="" formControlName="factoryName">
-      </div>
-      <div>
-        <label for="factoryAddress">Factory Address</label>
-        <input id="factoryAddress" type="text" placeholder="" formControlName="factoryAddress">
-      </div>
-      <div>
-        <label for="factoryCountry">Factory Country</label>
-        <input id="factoryCountry" type="text" placeholder="" formControlName="factoryCountry">
-      </div>
-      <div>
-        <label for="productionLineId">Production Line ID</label>
-        <input id="productionLineId" type="text" placeholder="" formControlName="productionLineId">
-      </div>
-      <div>
-        <label for="productCode">Product Code</label>
-        <input id="productCode" type="text" placeholder="" formControlName="productCode">
-      </div>
-      <div>
-        <label for="productDescription">Product Description</label>
-        <input id="productDescription" type="text" placeholder="" formControlName="productDescription">
-      </div>
-      <div>
-        <label for="poNumber">PO Number</label>
-        <input id="poNumber" type="text" placeholder="" formControlName="poNumber">
-      </div>
-      <div>
-        <label for="expectedStartDate">Expected Start Date</label>
-        <input id="expectedStartDate" type="text" placeholder="" formControlName="expectedStartDate">
-      </div>
-    </div>
-    
-    <button type="submit">{{ editOrder ? 'Edit' : 'Add' }} Order</button>
-  </form>
-  <button (click)="closeModal()">close order</button> 
+    </form>
+  </div>
 </div>

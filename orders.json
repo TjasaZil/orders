@@ -75,6 +75,54 @@
         "expectedStartDate": "2024-04-16"
       },
       "id": "a61a"
+    },
+    {
+      "id": "20e9",
+      "omsId": "",
+      "products": [
+        {
+          "gtin": "",
+          "quantity": 0,
+          "serialNumberType": "",
+          "serialNumbers": "",
+          "templateId": ""
+        }
+      ],
+      "orderDetails": {
+        "factoryId": "",
+        "factoryName": "",
+        "factoryAddress": "",
+        "factoryCountry": "",
+        "productionLineId": "",
+        "productCode": "",
+        "productDescription": "",
+        "poNumber": "",
+        "expectedStartDate": ""
+      }
+    },
+    {
+      "id": "bc0a",
+      "omsId": "",
+      "products": [
+        {
+          "gtin": "",
+          "quantity": 0,
+          "serialNumberType": "",
+          "serialNumbers": "",
+          "templateId": ""
+        }
+      ],
+      "orderDetails": {
+        "factoryId": "",
+        "factoryName": "",
+        "factoryAddress": "",
+        "factoryCountry": "",
+        "productionLineId": "",
+        "productCode": "",
+        "productDescription": "",
+        "poNumber": "",
+        "expectedStartDate": ""
+      }
     }
   ]
 }

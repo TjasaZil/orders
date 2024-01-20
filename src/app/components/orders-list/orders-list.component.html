@@ -13,9 +13,8 @@
       <button (click)="LogOut()" class="btn-outline">Log out</button>
     </div>
   </nav>
-
+  <!--*ngIf="!modalAddClosed" -->
   <app-add-order-form
-    *ngIf="!modalAddClosed"
     (closingModal)="handleEditModalClose($event)"
     (addNewOrder)="addOrder($event)"
   >
