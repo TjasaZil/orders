@@ -77,11 +77,18 @@
       "id": "a61a"
     },
     {
-      "id": "20e9",
-      "omsId": "",
+      "id": "fdad",
+      "omsId": "this order works",
       "products": [
         {
-          "gtin": "",
+          "gtin": "123421",
+          "quantity": "0XCQ",
+          "serialNumberType": "string",
+          "serialNumbers": "vearhreathabfdsb gfdyxb yx",
+          "templateId": "420"
+        },
+        {
+          "gtin": "123",
           "quantity": 0,
           "serialNumberType": "",
           "serialNumbers": "",
@@ -89,31 +96,7 @@
         }
       ],
       "orderDetails": {
-        "factoryId": "",
-        "factoryName": "",
-        "factoryAddress": "",
-        "factoryCountry": "",
-        "productionLineId": "",
-        "productCode": "",
-        "productDescription": "",
-        "poNumber": "",
-        "expectedStartDate": ""
-      }
-    },
-    {
-      "id": "bc0a",
-      "omsId": "",
-      "products": [
-        {
-          "gtin": "",
-          "quantity": 0,
-          "serialNumberType": "",
-          "serialNumbers": "",
-          "templateId": ""
-        }
-      ],
-      "orderDetails": {
-        "factoryId": "",
+        "factoryId": " fhxshhm c",
         "factoryName": "",
         "factoryAddress": "",
         "factoryCountry": "",

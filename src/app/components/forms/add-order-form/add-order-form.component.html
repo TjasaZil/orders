@@ -24,66 +24,72 @@
           <h2 class="form-title">Products</h2>
           <div class="gray-line"></div>
         </div>
-        <div>
-          <!-- add -products -->
-          <div>
-            <button type="button" (click)="addProduct()">
-              Add a new product
-            </button>
-          </div>
-          <!-- inputs for products -->
-          <div formArrayName="products">
-            <div
-              *ngFor="let product of products.controls; let i = index"
-              [formGroupName]="i"
-            >
-              <div class="label-input-positioning">
-                <label for="gtin">GTIN</label>
-                <input
-                  id="gtin"
-                  type="text"
-                  placeholder=""
-                  formControlName="gtin"
-                />
-              </div>
-              <div class="label-input-positioning">
-                <label for="quantity">Quantity</label>
-                <input
-                  id="quantity"
-                  type="text"
-                  placeholder=""
-                  formControlName="quantity"
-                />
-              </div>
-              <div class="label-input-positioning">
-                <label for="serialNumberType">Serial Number Type</label>
-                <input
-                  id="serialNumberType"
-                  type="text"
-                  placeholder=""
-                  formControlName="serialNumberType"
-                />
-              </div>
-              <div class="label-input-positioning">
-                <label for="serialNumbers">Serial Numbers</label>
-                <textarea
-                  id="serialNumbers"
-                  type="text"
-                  placeholder=""
-                  formControlName="serialNumbers"
-                ></textarea>
-              </div>
-              <div class="label-input-positioning">
-                <label for="templateId">Template ID</label>
-                <input
-                  id="templateId"
-                  type="text"
-                  placeholder=""
-                  formControlName="templateId"
-                />
+        <div class="all-products">
+          <div
+            class="products-inputs"
+            *ngFor="let product of products.controls; let i = index"
+          >
+            <span>Product {{ i + 1 }}</span>
+            <!-- inputs for products -->
+            <div formArrayName="products">
+              <div [formGroupName]="i" class="product-details">
+                <div class="label-input-positioning">
+                  <label for="gtin">GTIN</label>
+                  <input
+                    id="gtin"
+                    type="text"
+                    placeholder=""
+                    formControlName="gtin"
+                  />
+                </div>
+                <div class="label-input-positioning">
+                  <label for="quantity">Quantity</label>
+                  <input
+                    id="quantity"
+                    type="text"
+                    placeholder=""
+                    formControlName="quantity"
+                  />
+                </div>
+                <div class="label-input-positioning">
+                  <label for="serialNumberType">Serial Number Type</label>
+                  <input
+                    id="serialNumberType"
+                    type="text"
+                    placeholder=""
+                    formControlName="serialNumberType"
+                  />
+                </div>
+                <div class="label-input-positioning">
+                  <label for="serialNumbers">Serial Numbers</label>
+                  <textarea
+                    id="serialNumbers"
+                    type="text"
+                    placeholder=""
+                    formControlName="serialNumbers"
+                  ></textarea>
+                </div>
+                <div class="label-input-positioning">
+                  <label for="templateId">Template ID</label>
+                  <input
+                    id="templateId"
+                    type="text"
+                    placeholder=""
+                    formControlName="templateId"
+                  />
+                </div>
               </div>
             </div>
           </div>
+          <!-- add -products -->
+          <button type="button" (click)="addProduct()" class="add-product-btn">
+            <img
+              src="../../../assets/icons/add-new.svg"
+              alt=""
+              class="add-image"
+            />
+            <span>Add a new product</span>
+          </button>
         </div>
       </div>
       <!-- order details -->

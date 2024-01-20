@@ -15,6 +15,7 @@
   </nav>
   <!--*ngIf="!modalAddClosed" -->
   <app-add-order-form
+    *ngIf="!modalAddClosed"
     (closingModal)="handleEditModalClose($event)"
     (addNewOrder)="addOrder($event)"
   >

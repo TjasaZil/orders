@@ -160,3 +160,56 @@ form {
     gap: 19px;
   }
 }
+.all-products {
+  padding-top: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 15px;
+  width: 100%;
+  .products-inputs {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    gap: 52px;
+    .product-details {
+      display: flex;
+      width: 100%;
+      flex-wrap: wrap;
+      justify-content: start;
+      align-items: start;
+      gap: 32px;
+      #gtin {
+        width: 204px;
+      }
+      #quantity {
+        width: 128px;
+      }
+      #serialNumberType {
+        width: 204px;
+      }
+      #serialNumbers {
+        width: 216px;
+      }
+      #templateId {
+        width: 204px;
+      }
+    }
+    span {
+      width: 200px;
+      @include textbase($main-dark-orange, $advent, 16px, 700, 19px);
+    }
+  }
+  .add-product-btn {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    span {
+      margin-left: 5px;
+    }
+    .add-image {
+      width: 15px;
+    }
+  }
+}
