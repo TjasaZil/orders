@@ -1,20 +1,5 @@
 @import "../../../app.component.scss";
 
-.popup-background {
-  background: rgba(115, 115, 115, 0.6);
-  backdrop-filter: blur(4px);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 100;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
 .popup {
   padding: 40px;
   border-radius: 6px;
@@ -196,7 +181,7 @@ form {
         width: 204px;
       }
     }
-    span {
+    button {
       width: 200px;
       @include textbase($main-dark-orange, $advent, 16px, 700, 19px);
     }

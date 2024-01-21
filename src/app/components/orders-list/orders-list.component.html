@@ -20,8 +20,14 @@
     (addNewOrder)="addOrder($event)"
   >
   </app-add-order-form>
+
+  <app-delete-order
+    *ngIf="!modalDeleteClosed"
+    (closingModal)="handleDeleteModalClose($event)"
+  ></app-delete-order>
+
   <!-- modals for delete and status change
-  <app-delete-order *ngIf="openStatusModal"></app-delete-order>
+  
   <app-change-order-status *ngIf="openDeleteModal"></app-change-order-status>-->
 
   <div class="orders">
@@ -67,7 +73,7 @@
                   <button (click)="openEditModal(order)">Edit order</button>
                 </li>
                 <li>
-                  <button (click)="deleteOrder(order)">Delete order</button>
+                  <button (click)="openDeleteModal(order)">Delete order</button>
                 </li>
               </ul>
             </div>

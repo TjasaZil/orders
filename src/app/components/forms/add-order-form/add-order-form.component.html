@@ -29,10 +29,16 @@
             class="products-inputs"
             *ngFor="let product of products.controls; let i = index"
           >
-            <span>Product {{ i + 1 }}</span>
+            <button type="button" (click)="openProduct(i)">
+              Product {{ i + 1 }}
+            </button>
             <!-- inputs for products -->
             <div formArrayName="products">
-              <div [formGroupName]="i" class="product-details">
+              <div
+                *ngIf="openedProductId === i"
+                [formGroupName]="i"
+                class="product-details"
+              >
                 <div class="label-input-positioning">
                   <label for="gtin">GTIN</label>
                   <input

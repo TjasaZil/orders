@@ -11,14 +11,15 @@ import { CrudService } from 'src/app/service/crud.service';
 export class OrdersListComponent implements OnInit {
   modalAddClosed: boolean = true;
   modalEditClosed: boolean = true;
+  modalDeleteClosed: boolean = true;
   openStatusModal: boolean = true;
-  openDeleteModal: boolean = false;
   //orderOpened:boolean=false;
   openedOrderId: string | null | undefined = null;
   chosenFunctionality: string | null | undefined = null;
   orderObj: Order = new Order();
   orderArr: Order[] = [];
   selectedOrderForEdit: Order | undefined;
+  selectedOrderForDelete: Order | undefined;
 
   constructor(private crud: CrudService, private router: Router) {}
 
@@ -82,7 +83,10 @@ export class OrdersListComponent implements OnInit {
     this.selectedOrderForEdit = order;
     this.modalEditClosed = false;
   }
-
+  openDeleteModal(order: Order) {
+    this.selectedOrderForDelete = order;
+    this.modalDeleteClosed = false;
+  }
   handleAddModalClose(isModalClosed: boolean): void {
     this.modalAddClosed = isModalClosed;
     this.selectedOrderForEdit = undefined; // Reset for edit scenario
@@ -91,6 +95,10 @@ export class OrdersListComponent implements OnInit {
     this.modalEditClosed = isModalClosed;
     this.modalAddClosed = isModalClosed;
     this.selectedOrderForEdit = undefined; // Reset for edit scenario
+  }
+  handleDeleteModalClose(isModalClosed: boolean): void {
+    this.modalDeleteClosed = isModalClosed;
+    this.selectedOrderForDelete = undefined;
   }
 
   LogOut() {

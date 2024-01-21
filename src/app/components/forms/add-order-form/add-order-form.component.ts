@@ -8,6 +8,7 @@ import { Order, OrderDetails } from 'src/app/models/order/order';
   styleUrls: ['./add-order-form.component.scss'],
 })
 export class AddOrderFormComponent implements OnInit {
+  openedProductId: number | null | undefined = 0;
   @Output() closingModal = new EventEmitter<boolean>();
   @Output() addNewOrder = new EventEmitter<Order>();
   @Output() editExistingOrder = new EventEmitter<Order>();
@@ -179,5 +180,8 @@ export class AddOrderFormComponent implements OnInit {
     });
 
     this.products.push(productForm);
+  }
+  openProduct(id?: number) {
+    this.openedProductId = this.openedProductId === id ? null : id;
   }
 }
