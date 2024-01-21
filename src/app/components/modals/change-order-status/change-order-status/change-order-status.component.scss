@@ -1,0 +1,37 @@
+@import "../../../../app.component.scss";
+
+.change-popup {
+  padding: 30px;
+  border-radius: 6px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  max-width: 490px;
+}
+.delete-icon {
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  width: 100%;
+  img {
+    width: 20px;
+  }
+}
+.change-order-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  text-align: center;
+}
+.change-order-btns {
+  padding-top: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
