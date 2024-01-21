@@ -2,11 +2,26 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Order } from 'src/app/models/order/order';
 import { CrudService } from 'src/app/service/crud.service';
+import {
+  trigger,
+  state,
+  style,
+  transition,
+  animate,
+} from '@angular/animations';
 
 @Component({
   selector: 'app-orders-list',
   templateUrl: './orders-list.component.html',
   styleUrls: ['./orders-list.component.scss'],
+  animations: [
+    trigger('fadeInOut', [
+      state('in', style({ opacity: 1, display: 'block' })),
+      state('out', style({ opacity: 0, display: 'none' })),
+      transition('out => in', [animate('1s ease-in')]),
+      transition('in => out', [animate('1s ease-out')]),
+    ]),
+  ],
 })
 export class OrdersListComponent implements OnInit {
   modalAddClosed: boolean = true;

@@ -61,7 +61,7 @@ button {
 }
 
 .fadein {
-  animation: fadeIn 1s;
+  animation: fadeIn 2s;
 }
 @keyframes fadeIn {
   0% {
@@ -72,7 +72,7 @@ button {
   }
 }
 .fadeout {
-  animation: fadeOut 1s;
+  animation: fadeOut 2s;
 }
 @keyframes fadeOut {
   0% {

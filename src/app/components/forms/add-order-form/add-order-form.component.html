@@ -1,4 +1,4 @@
-<div class="popup-background">
+<div class="popup-background fadein">
   <div class="popup">
     <div class="title-section">
       <div class="top-title-section">
@@ -48,11 +48,15 @@
             class="products-inputs"
             *ngFor="let product of products.controls; let i = index"
           >
-            <button type="button" (click)="openProduct(i)">
+            <button
+              type="button"
+              (click)="openProduct(i)"
+              [class.active]="openedProductId === i"
+            >
               Product {{ i + 1 }}
             </button>
             <!-- inputs for products formArrayName="products"-->
-            <div>
+            <div class="just-inputs">
               <div
                 *ngIf="openedProductId === i"
                 [formGroupName]="i"

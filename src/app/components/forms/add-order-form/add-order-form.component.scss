@@ -146,6 +146,7 @@ form {
   }
 }
 .all-products {
+  position: relative;
   padding-top: 14px;
   display: flex;
   flex-direction: column;
@@ -158,6 +159,12 @@ form {
     justify-content: start;
     align-items: start;
     gap: 52px;
+    .just-inputs {
+      position: absolute;
+      width: 80%;
+      top: 14px;
+      right: 0;
+    }
     .product-details {
       display: flex;
       width: 100%;
@@ -183,7 +190,14 @@ form {
     }
     button {
       width: 200px;
-      @include textbase($main-dark-orange, $advent, 16px, 700, 19px);
+      @include textbase($text-dark, $advent, 16px, 700, 19px);
+
+      &:hover {
+        @include textbase($main-dark-orange, $advent, 16px, 700, 19px);
+      }
+      &.active {
+        @include textbase($main-dark-orange, $advent, 16px, 700, 19px);
+      }
     }
   }
   .add-product-btn {
