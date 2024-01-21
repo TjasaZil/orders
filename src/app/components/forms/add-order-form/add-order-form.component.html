@@ -3,8 +3,9 @@
     <div class="title-section">
       <div class="top-title-section">
         <h4 class="h-advent-semibold">
-          {{ editOrder ? 'Order: {{order.omsId}}' : 'Create new order' }}
+          {{ orderTitle }}
         </h4>
+
         <button (click)="closeModal()">
           <img src="../../../assets/icons/close.svg" alt="" class="" />
         </button>

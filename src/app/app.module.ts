@@ -1,15 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LogInComponent } from './components/log-in/log-in.component';
 import { OrdersListComponent } from './components/orders-list/orders-list.component';
 import { AddOrderFormComponent } from './components/forms/add-order-form/add-order-form.component';
 import { EditOrderFormComponent } from './components/forms/edit-order-form/edit-order-form.component';
-import { ChangeOrderStatusComponent } from './components/modals/change-order-status/change-order-status/change-order-status.component';
-import { DeleteOrderComponent } from './components/modals/delete-order/delete-order/delete-order.component';
+import { DeleteOrderComponent } from './components/modals/delete-order/delete-order.component';
 
 @NgModule({
   declarations: [
@@ -18,17 +17,16 @@ import { DeleteOrderComponent } from './components/modals/delete-order/delete-or
     OrdersListComponent,
     AddOrderFormComponent,
     EditOrderFormComponent,
-    ChangeOrderStatusComponent,
-    DeleteOrderComponent
+    DeleteOrderComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

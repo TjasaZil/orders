@@ -1,6 +1,6 @@
-@import "../../../../app.component.scss";
+@import "../../../app.component.scss";
 
-.change-popup {
+.delete-popup {
   padding: 30px;
   border-radius: 6px;
   background: white;
@@ -8,8 +8,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 25%;
-  max-width: 490px;
 }
 .delete-icon {
   display: flex;
@@ -20,15 +18,17 @@
     width: 20px;
   }
 }
-.change-order-text {
+.delete-order-text {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: auto;
   text-align: center;
+  padding: 0px 89px 42px 89px;
+  width: 252px;
 }
-.change-order-btns {
+.delete-order-btns {
   padding-top: 42px;
   display: flex;
   justify-content: center;

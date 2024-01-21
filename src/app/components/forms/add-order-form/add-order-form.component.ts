@@ -187,4 +187,11 @@ export class AddOrderFormComponent implements OnInit {
   openProduct(id?: number) {
     this.openedProductId = this.openedProductId === id ? null : id;
   }
+  get orderTitle(): string {
+    if (this.editOrder && this.editOrder.omsId) {
+      return 'Order: ' + this.editOrder.omsId;
+    } else {
+      return 'Create new order';
+    }
+  }
 }

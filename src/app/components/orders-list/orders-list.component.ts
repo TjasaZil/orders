@@ -12,7 +12,6 @@ export class OrdersListComponent implements OnInit {
   modalAddClosed: boolean = true;
   modalEditClosed: boolean = true;
   modalDeleteClosed: boolean = true;
-  modalStatusClosed: boolean = true;
   //orderOpened:boolean=false;
   openedOrderId: string | null | undefined = null;
   chosenFunctionality: string | null | undefined = null;
@@ -20,7 +19,6 @@ export class OrdersListComponent implements OnInit {
   orderArr: Order[] = [];
   selectedOrderForEdit: Order | undefined;
   selectedOrderForDelete: Order | undefined;
-  selectedOrderForStatus: Order | undefined;
 
   constructor(private crud: CrudService, private router: Router) {}
 
@@ -90,10 +88,6 @@ export class OrdersListComponent implements OnInit {
     this.selectedOrderForDelete = order;
     this.modalDeleteClosed = false;
   }
-  openStatusModal(order: Order) {
-    this.selectedOrderForStatus = order;
-    this.modalStatusClosed = false;
-  }
   handleAddModalClose(isModalClosed: boolean): void {
     this.modalAddClosed = isModalClosed;
     this.selectedOrderForEdit = undefined; // Reset for edit scenario
@@ -106,10 +100,6 @@ export class OrdersListComponent implements OnInit {
   handleDeleteModalClose(isModalClosed: boolean): void {
     this.modalDeleteClosed = isModalClosed;
     this.selectedOrderForDelete = undefined;
-  }
-  handleStatusModalClose(isModalClosed: boolean): void {
-    this.modalStatusClosed = isModalClosed;
-    this.selectedOrderForStatus = undefined;
   }
 
   LogOut() {
@@ -130,8 +120,4 @@ export class OrdersListComponent implements OnInit {
     if (this.chosenFunctionality === Id) this.chosenFunctionality = '';
     else this.chosenFunctionality = Id;
   }
-  /*chooseStatus(Id?: string) {
-    if (this.chosenFunctionality === Id) this.chosenFunctionality = '';
-    else this.chosenFunctionality = Id;
-  }*/
 }

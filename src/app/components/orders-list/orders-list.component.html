@@ -27,10 +27,10 @@
     (confirmDelete)="deleteOrder($event)"
   ></app-delete-order>
 
-  <app-change-order-status
+  <!-- <app-change-order-status
     *ngIf="!modalStatusClosed"
     (closingModal)="handleStatusModalClose($event)"
-  ></app-change-order-status>
+  ></app-change-order-status>-->
 
   <!-- modals for delete and status change
   
@@ -68,7 +68,7 @@
             </div>
           </div>
           <div class="order-buttons">
-            <!-- change the order status -->
+            <!-- change the order status 
             <div class="functionality">
               <button>order status</button>
               <ul *ngIf="chosenFunctionality === order.id">
@@ -82,7 +82,7 @@
                   <button>In Production</button>
                 </li>
               </ul>
-            </div>
+            </div>-->
             <!-- edit or delete the order -->
 
             <div class="functionality">
