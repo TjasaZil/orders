@@ -64,13 +64,23 @@ export class OrdersListComponent implements OnInit {
     );
   }
 
-  deleteOrder(eorder: Order) {
-    this.crud.deleteOrder(eorder).subscribe(
+  deleteOrder(order: Order) {
+    /*this.crud.deleteOrder(eorder).subscribe(
       (res) => {
         this.ngOnInit();
       },
       (err) => {
         alert('Unable to delete the order!');
+      }
+    );*/
+    this.crud.deleteOrder(order).subscribe(
+      (res) => {
+        // Handle the response, e.g., remove the order from the list
+        this.orderArr = this.orderArr.filter((o) => o.id !== order.id);
+      },
+      (err) => {
+        // Handle the error
+        console.error('Error deleting order:', err);
       }
     );
   }

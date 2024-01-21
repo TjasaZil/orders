@@ -24,6 +24,8 @@
   <app-delete-order
     *ngIf="!modalDeleteClosed"
     (closingModal)="handleDeleteModalClose($event)"
+    [orderToDelete]="selectedOrderForDelete"
+    (confirmDelete)="deleteOrder($event)"
   ></app-delete-order>
 
   <!-- modals for delete and status change

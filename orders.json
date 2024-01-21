@@ -75,37 +75,6 @@
         "expectedStartDate": "2024-04-16"
       },
       "id": "a61a"
-    },
-    {
-      "id": "fdad",
-      "omsId": "this order works",
-      "products": [
-        {
-          "gtin": "123421",
-          "quantity": "0XCQ",
-          "serialNumberType": "string",
-          "serialNumbers": "vearhreathabfdsb gfdyxb yx",
-          "templateId": "420"
-        },
-        {
-          "gtin": "123",
-          "quantity": 0,
-          "serialNumberType": "",
-          "serialNumbers": "",
-          "templateId": ""
-        }
-      ],
-      "orderDetails": {
-        "factoryId": " fhxshhm c",
-        "factoryName": "",
-        "factoryAddress": "",
-        "factoryCountry": "",
-        "productionLineId": "",
-        "productCode": "",
-        "productDescription": "",
-        "poNumber": "",
-        "expectedStartDate": ""
-      }
     }
   ]
 }
