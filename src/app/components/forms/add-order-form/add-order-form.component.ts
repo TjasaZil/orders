@@ -182,6 +182,7 @@ export class AddOrderFormComponent implements OnInit {
     });
 
     this.products.push(productForm);
+    this.openedProductId = this.products.length - 1;
   }
   openProduct(id?: number) {
     this.openedProductId = this.openedProductId === id ? null : id;

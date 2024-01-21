@@ -24,7 +24,7 @@
           <h2 class="form-title">Products</h2>
           <div class="gray-line"></div>
         </div>
-        <div class="all-products">
+        <div class="all-products" formArrayName="products">
           <div
             class="products-inputs"
             *ngFor="let product of products.controls; let i = index"
@@ -32,8 +32,8 @@
             <button type="button" (click)="openProduct(i)">
               Product {{ i + 1 }}
             </button>
-            <!-- inputs for products -->
-            <div formArrayName="products">
+            <!-- inputs for products formArrayName="products"-->
+            <div>
               <div
                 *ngIf="openedProductId === i"
                 [formGroupName]="i"
