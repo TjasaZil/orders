@@ -1,40 +1,49 @@
-@mixin btn($background, $text, $border){
+@mixin btn($background, $text, $border) {
   display: inline-flex;
-padding: 8px 23px;
-justify-content: center;
-align-items: center;
-gap: 10px;
-border-radius: 6px;
-background-color: $background;
-color:$text;
-border: $border;
-transition: background-color 1s;
-cursor: pointer;
+  padding: 8px 23px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 6px;
+  background-color: $background;
+  color: $text;
+  border: $border;
+  transition: background-color 1s;
+  cursor: pointer;
 }
-.btn-solid{
-@include btn($main-dark-orange, $text-light, none);
-  &:hover{
-    @include btn($main-gray, $text-light, none); 
+.btn-solid {
+  @include btn($main-dark-orange, $text-light, none);
+  &:hover {
+    @include btn($main-gray, $text-light, none);
   }
-  &:focus{
+  &:focus {
     @include btn($text-dark, $text-light, none);
   }
 }
-.btn-outline{
+.btn-outline {
   @include btn(transparent, $text-dark, 1px solid $main-dark-orange);
-  &:hover{
+  &:hover {
     @include btn($bg-white, $text-dark, 1px solid $main-gray);
   }
-  &:focus{
+  &:focus {
     @include btn($text-dark, $text-light, 1px solid $text-dark);
   }
 }
-.btn-light{
+.btn-light {
   @include btn(transparent, $text-dark, none);
-  &:hover{
-    @include btn(transparent, $main-gray, none); 
+  &:hover {
+    @include btn(transparent, $main-gray, none);
   }
-  &:focus{
+  &:focus {
     @include btn(transparent, $main-dark-orange, none);
+  }
+}
+.btn-outline-orange {
+  @include btn(transparent, $main-dark-orange, 1px solid $main-dark-orange);
+  &:hover {
+    @include btn($bg-white, $main-gray, 1px solid $main-gray);
+  }
+  &:focus {
+    @include btn($text-dark, $text-light, 1px solid $text-dark);
   }
 }

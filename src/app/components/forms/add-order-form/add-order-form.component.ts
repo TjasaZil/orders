@@ -150,7 +150,9 @@ export class AddOrderFormComponent implements OnInit {
     };
     if (this.editOrder)
       this.editExistingOrder.emit({ ...this.editOrder, ...formData });
-    else this.addNewOrder.emit(newOrder);
+    else {
+      this.addNewOrder.emit(newOrder);
+    }
     this.closingModal.emit(true);
   }
 
