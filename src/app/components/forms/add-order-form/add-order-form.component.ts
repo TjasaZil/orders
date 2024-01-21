@@ -139,6 +139,10 @@ export class AddOrderFormComponent implements OnInit {
   /** emitting to add a new order*/
 
   newOrder() {
+    if (this.addOrderForm.invalid) {
+      this.addOrderForm.markAllAsTouched();
+      return;
+    }
     const formData = this.addOrderForm.value as Partial<Order>;
 
     // Ensure all required fields are properly set
@@ -166,7 +170,7 @@ export class AddOrderFormComponent implements OnInit {
         Validators.required,
         Validators.pattern('^[a-zA-Z0-9 _-]+$'),
       ]),
-      quantity: new FormControl(0, [Validators.required]),
+      quantity: new FormControl(0, [Validators.required, Validators.min(1)]),
       serialNumberType: new FormControl('', [
         Validators.required,
         Validators.pattern('^[a-zA-Z0-9 _-]+$'),

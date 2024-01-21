@@ -17,7 +17,25 @@
       <div class="oms">
         <span class="form-title" for="omsId">oms ID</span>
         <div class="gray-line"></div>
-        <input id="omsId" type="text" placeholder="" formControlName="omsId" />
+        <input
+          id="omsId"
+          type="text"
+          placeholder=""
+          formControlName="omsId"
+          [class.error]="
+            addOrderForm.get('omsId')?.invalid &&
+            addOrderForm.get('omsId')?.touched
+          "
+        />
+        <div
+          *ngIf="
+            addOrderForm.get('omsId')?.invalid &&
+            addOrderForm.get('omsId')?.touched
+          "
+          class="error-message"
+        >
+          Oms ID is required and must be a string.
+        </div>
       </div>
       <!-- products -->
       <div class="form-section">
@@ -47,16 +65,42 @@
                     type="text"
                     placeholder=""
                     formControlName="gtin"
+                    [class.error]="
+                      products.at(i).get('gtin')?.invalid &&
+                      products.at(i).get('gtin')?.touched
+                    "
                   />
+                  <div
+                    *ngIf="
+                      products.at(i).get('gtin')?.invalid &&
+                      products.at(i).get('gtin')?.touched
+                    "
+                    class="error-message"
+                  >
+                    GTIN is required and must be a string.
+                  </div>
                 </div>
                 <div class="label-input-positioning">
                   <label for="quantity">Quantity</label>
                   <input
                     id="quantity"
-                    type="text"
+                    type="number"
                     placeholder=""
                     formControlName="quantity"
+                    [class.error]="
+                      products.at(i).get('quantity')?.invalid &&
+                      products.at(i).get('quantity')?.touched
+                    "
                   />
+                  <div
+                    *ngIf="
+                      products.at(i).get('quantity')?.invalid &&
+                      products.at(i).get('quantity')?.touched
+                    "
+                    class="error-message"
+                  >
+                    Quantity is required and must be a number.
+                  </div>
                 </div>
                 <div class="label-input-positioning">
                   <label for="serialNumberType">Serial Number Type</label>
@@ -65,7 +109,20 @@
                     type="text"
                     placeholder=""
                     formControlName="serialNumberType"
+                    [class.error]="
+                      products.at(i).get('serialNumberType')?.invalid &&
+                      products.at(i).get('serialNumberType')?.touched
+                    "
                   />
+                  <div
+                    *ngIf="
+                      products.at(i).get('serialNumberType')?.invalid &&
+                      products.at(i).get('serialNumberType')?.touched
+                    "
+                    class="error-message"
+                  >
+                    Serial Number Type is required and must be a string.
+                  </div>
                 </div>
                 <div class="label-input-positioning">
                   <label for="serialNumbers">Serial Numbers</label>
@@ -74,7 +131,20 @@
                     type="text"
                     placeholder=""
                     formControlName="serialNumbers"
+                    [class.error]="
+                      products.at(i).get('serialNumbers')?.invalid &&
+                      products.at(i).get('serialNumbers')?.touched
+                    "
                   />
+                  <div
+                    *ngIf="
+                      products.at(i).get('serialNumbers')?.invalid &&
+                      products.at(i).get('serialNumbers')?.touched
+                    "
+                    class="error-message"
+                  >
+                    Serial Numbers is required and must be a string.
+                  </div>
                 </div>
                 <div class="label-input-positioning">
                   <label for="templateId">Template ID</label>
@@ -83,7 +153,20 @@
                     type="text"
                     placeholder=""
                     formControlName="templateId"
+                    [class.error]="
+                      products.at(i).get('templateId')?.invalid &&
+                      products.at(i).get('templateId')?.touched
+                    "
                   />
+                  <div
+                    *ngIf="
+                      products.at(i).get('templateId')?.invalid &&
+                      products.at(i).get('templateId')?.touched
+                    "
+                    class="error-message"
+                  >
+                    Template ID is required and must be a string.
+                  </div>
                 </div>
               </div>
             </div>
@@ -114,7 +197,20 @@
               type="text"
               placeholder=""
               formControlName="factoryId"
+              [class.error]="
+                addOrderForm.get('orderDetails.factoryId')?.invalid &&
+                addOrderForm.get('orderDetails.factoryId')?.touched
+              "
             />
+            <div
+              *ngIf="
+                addOrderForm.get('orderDetails.factoryId')?.invalid &&
+                addOrderForm.get('orderDetails.factoryId')?.touched
+              "
+              class="error-message"
+            >
+              Factory ID is required and must be a string.
+            </div>
           </div>
           <div class="label-input-positioning">
             <label for="factoryName">Factory Name</label>
@@ -123,7 +219,20 @@
               type="text"
               placeholder=""
               formControlName="factoryName"
+              [class.error]="
+                addOrderForm.get('orderDetails.factoryName')?.invalid &&
+                addOrderForm.get('orderDetails.factoryName')?.touched
+              "
             />
+            <div
+              *ngIf="
+                addOrderForm.get('orderDetails.factoryName')?.invalid &&
+                addOrderForm.get('forderDetails.actoryName')?.touched
+              "
+              class="error-message"
+            >
+              Factory Name must be a string.
+            </div>
           </div>
           <div class="label-input-positioning">
             <label for="factoryAddress">Factory Address</label>
@@ -132,7 +241,20 @@
               type="text"
               placeholder=""
               formControlName="factoryAddress"
+              [class.error]="
+                addOrderForm.get('orderDetails.factoryAddress')?.invalid &&
+                addOrderForm.get('orderDetails.factoryAddress')?.touched
+              "
             />
+            <div
+              *ngIf="
+                addOrderForm.get('orderDetails.factoryAddress')?.invalid &&
+                addOrderForm.get('orderDetails.factoryAddress')?.touched
+              "
+              class="error-message"
+            >
+              Factory Address must be a string.
+            </div>
           </div>
           <div class="label-input-positioning">
             <label for="factoryCountry">Factory Country</label>
@@ -141,7 +263,20 @@
               type="text"
               placeholder=""
               formControlName="factoryCountry"
+              [class.error]="
+                addOrderForm.get('orderDetails.factoryCountry')?.invalid &&
+                addOrderForm.get('orderDetails.factoryCountry')?.touched
+              "
             />
+            <div
+              *ngIf="
+                addOrderForm.get('orderDetails.factoryCountry')?.invalid &&
+                addOrderForm.get('orderDetails.factoryCountry')?.touched
+              "
+              class="error-message"
+            >
+              Factory Country is required and must be a string.
+            </div>
           </div>
           <div class="label-input-positioning">
             <label for="productionLineId">Production Line ID</label>
@@ -150,7 +285,20 @@
               type="text"
               placeholder=""
               formControlName="productionLineId"
+              [class.error]="
+                addOrderForm.get('orderDetails.productionLineId')?.invalid &&
+                addOrderForm.get('orderDetails.productionLineId')?.touched
+              "
             />
+            <div
+              *ngIf="
+                addOrderForm.get('orderDetails.productionLineId')?.invalid &&
+                addOrderForm.get('orderDetails.productionLineId')?.touched
+              "
+              class="error-message"
+            >
+              Production Line ID is required and must be a string.
+            </div>
           </div>
           <div class="label-input-positioning">
             <label for="productCode">Product Code</label>
@@ -159,7 +307,20 @@
               type="text"
               placeholder=""
               formControlName="productCode"
+              [class.error]="
+                addOrderForm.get('orderDetails.productCode')?.invalid &&
+                addOrderForm.get('orderDetails.productCode')?.touched
+              "
             />
+            <div
+              *ngIf="
+                addOrderForm.get('orderDetails.productCode')?.invalid &&
+                addOrderForm.get('orderDetails.productCode')?.touched
+              "
+              class="error-message"
+            >
+              Product Code is required and must be a string.
+            </div>
           </div>
           <div class="label-input-positioning">
             <label for="productDescription">Product Description</label>
@@ -168,7 +329,20 @@
               type="text"
               placeholder=""
               formControlName="productDescription"
+              [class.error]="
+                addOrderForm.get('orderDetails.productDescription')?.invalid &&
+                addOrderForm.get('orderDetails.productDescription')?.touched
+              "
             />
+            <div
+              *ngIf="
+                addOrderForm.get('orderDetails.productDescription')?.invalid &&
+                addOrderForm.get('orderDetails.productDescription')?.touched
+              "
+              class="error-message"
+            >
+              Product Description is required and must be a string.
+            </div>
           </div>
           <div class="inputs-and-buttons">
             <div class="last-inputs">
@@ -179,7 +353,20 @@
                   type="text"
                   placeholder=""
                   formControlName="poNumber"
+                  [class.error]="
+                    addOrderForm.get('orderDetails.poNumber')?.invalid &&
+                    addOrderForm.get('orderDetails.poNumber')?.touched
+                  "
                 />
+                <div
+                  *ngIf="
+                    addOrderForm.get('orderDetails.poNumber')?.invalid &&
+                    addOrderForm.get('orderDetails.poNumber')?.touched
+                  "
+                  class="error-message"
+                >
+                  PO Number must be a string.
+                </div>
               </div>
               <div class="label-input-positioning">
                 <label for="expectedStartDate">Expected Start Date</label>
@@ -188,7 +375,22 @@
                   type="text"
                   placeholder=""
                   formControlName="expectedStartDate"
+                  [class.error]="
+                    addOrderForm.get('orderDetails.expectedStartDate')
+                      ?.invalid &&
+                    addOrderForm.get('orderDetails.expectedStartDate')?.touched
+                  "
                 />
+                <div
+                  *ngIf="
+                    addOrderForm.get('orderDetails.expectedStartDate')
+                      ?.invalid &&
+                    addOrderForm.get('orderDetails.expectedStartDate')?.touched
+                  "
+                  class="error-message"
+                >
+                  Expected Start Date must be a string.
+                </div>
               </div>
             </div>
             <div class="modal-buttons">

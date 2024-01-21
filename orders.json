@@ -64,7 +64,7 @@
         }
       ],
       "orderDetails": {
-        "factoryId": "17",
+        "factoryId": "21",
         "factoryName": "Factory 6",
         "factoryAddress": "219 Industrial Road, City 18",
         "factoryCountry": "Country 5",
@@ -75,6 +75,61 @@
         "expectedStartDate": "2024-04-16"
       },
       "id": "a61a"
+    },
+    {
+      "id": "19c9",
+      "omsId": "de3",
+      "products": [
+        {
+          "gtin": "123421",
+          "quantity": 0,
+          "serialNumberType": "string",
+          "serialNumbers": "123214324bfd",
+          "templateId": "420"
+        },
+        {
+          "gtin": "123421",
+          "quantity": 0,
+          "serialNumberType": "adv",
+          "serialNumbers": "123214324bfd",
+          "templateId": "NGDH"
+        }
+      ],
+      "orderDetails": {
+        "factoryId": "vcqw",
+        "factoryName": "",
+        "factoryAddress": "",
+        "factoryCountry": "testt",
+        "productionLineId": "vfa23",
+        "productCode": "fewf23",
+        "productDescription": "this is a test",
+        "poNumber": "",
+        "expectedStartDate": ""
+      }
+    },
+    {
+      "id": "c7f7",
+      "omsId": "de3",
+      "products": [
+        {
+          "gtin": "123",
+          "quantity": 0,
+          "serialNumberType": "adv",
+          "serialNumbers": "123214324bfd",
+          "templateId": "420"
+        }
+      ],
+      "orderDetails": {
+        "factoryId": "12",
+        "factoryName": "",
+        "factoryAddress": "",
+        "factoryCountry": "testt",
+        "productionLineId": "vfa23",
+        "productCode": "fewf23",
+        "productDescription": "this is a test",
+        "poNumber": "",
+        "expectedStartDate": ""
+      }
     }
   ]
 }
