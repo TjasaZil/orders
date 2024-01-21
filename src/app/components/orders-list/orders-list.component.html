@@ -27,15 +27,6 @@
     (confirmDelete)="deleteOrder($event)"
   ></app-delete-order>
 
-  <!-- <app-change-order-status
-    *ngIf="!modalStatusClosed"
-    (closingModal)="handleStatusModalClose($event)"
-  ></app-change-order-status>-->
-
-  <!-- modals for delete and status change
-  
-  -->
-
   <div class="orders">
     <!-- title -->
     <h1 class="h-advent-semibold">Orders list</h1>
@@ -44,7 +35,7 @@
       <div class="orders-list-container" *ngFor="let order of orderArr">
         <div class="pre-expand-data">
           <div class="order-small-data">
-            <div class="order-small-data-container">
+            <div class="order-small-data-container fadein">
               <span class="p-advent-bold">Oms ID:</span>
               <p class="p-inter-light">#{{ order.omsId }}</p>
             </div>
@@ -68,21 +59,6 @@
             </div>
           </div>
           <div class="order-buttons">
-            <!-- change the order status 
-            <div class="functionality">
-              <button>order status</button>
-              <ul *ngIf="chosenFunctionality === order.id">
-                <li>
-                  <button (click)="openStatusModal(order)">Finished</button>
-                </li>
-                <li>
-                  <button>Cancled</button>
-                </li>
-                <li>
-                  <button>In Production</button>
-                </li>
-              </ul>
-            </div>-->
             <!-- edit or delete the order -->
 
             <div class="functionality">
@@ -90,11 +66,21 @@
                 <img src="../../../assets/icons/dots.svg" alt="" class="" />
               </button>
               <!--  -->
-              <ul *ngIf="chosenFunctionality === order.id">
+              <ul *ngIf="chosenFunctionality === order.id" class="fadein">
                 <li>
+                  <img
+                    src="../../../assets/icons/check.svg"
+                    alt=""
+                    class="check-icon fadeIn"
+                  />
                   <button (click)="openEditModal(order)">Edit order</button>
                 </li>
                 <li>
+                  <img
+                    src="../../../assets/icons/check.svg"
+                    alt=""
+                    class="check-icon fadeIn"
+                  />
                   <button (click)="openDeleteModal(order)">Delete order</button>
                 </li>
               </ul>
@@ -120,22 +106,14 @@
           <!-- products -->
           <div class="opened-products">
             <h4>Products: ( {{ order.products.length }} )</h4>
-            <div class="opened-product-slider">
-              <div class="opened-products-list">
-                <ul *ngFor="let product of order.products">
-                  <li>GTIN: {{ product.gtin }}</li>
-                  <li>Quantity: {{ product.quantity }}</li>
-                  <li>Serial Number Type: {{ product.serialNumberType }}</li>
-                  <li>Serial Numbers: {{ product.serialNumbers }}</li>
-                  <li>Template ID: {{ product.templateId }}</li>
-                </ul>
-              </div>
-              <img
-                *ngIf="order.products.length > 3"
-                src="../../../assets/icons/arrow-gray-full-right.svg"
-                alt=""
-                class=""
-              />
+            <div class="opened-products-list">
+              <ul *ngFor="let product of order.products">
+                <li>GTIN: {{ product.gtin }}</li>
+                <li>Quantity: {{ product.quantity }}</li>
+                <li>Serial Number Type: {{ product.serialNumberType }}</li>
+                <li>Serial Numbers: {{ product.serialNumbers }}</li>
+                <li>Template ID: {{ product.templateId }}</li>
+              </ul>
             </div>
           </div>
           <!-- order details -->

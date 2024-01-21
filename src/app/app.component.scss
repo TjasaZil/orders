@@ -9,7 +9,7 @@
 }
 * {
   border: none;
-  //outline: 1px solid red;
+  outline: 1px solid red;
 }
 html {
   margin: 0;
@@ -58,4 +58,27 @@ button {
   width: 100%;
   height: 100%;
   overflow: hidden;
+}
+
+.fadein {
+  animation: fadeIn 1s;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.fadeout {
+  animation: fadeOut 1s;
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
