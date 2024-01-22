@@ -39,20 +39,22 @@
               <span class="p-advent-bold">Oms ID:</span>
               <p class="p-inter-light">#{{ order.omsId }}</p>
             </div>
-            <!--  *ngIf="openedOrderId !== order.id" -->
+            <!-- 
+              [@fadeInOut]="openedOrderId !== order.id ? 'in' : 'out'"  -->
             <div
+              *ngIf="openedOrderId !== order.id"
               class="order-small-data-container"
-              [@fadeInOut]="openedOrderId !== order.id ? 'in' : 'out'"
             >
               <span class="p-advent-bold">Products</span>
               <p class="p-inter-light">
                 Product quantity: {{ order.products.length }}
               </p>
             </div>
-            <!--  *ngIf="openedOrderId !== order.id" -->
+            <!--  
+              [@fadeInOut]="openedOrderId !== order.id ? 'in' : 'out'"-->
             <div
+              *ngIf="openedOrderId !== order.id"
               class="order-small-data-container"
-              [@fadeInOut]="openedOrderId !== order.id ? 'in' : 'out'"
             >
               <span class="p-advent-bold">Order details</span>
               <p class="p-inter-light">
@@ -67,10 +69,8 @@
               <button (click)="chooseFunctionality(order?.id)">
                 <img src="../../../assets/icons/dots.svg" alt="" class="" />
               </button>
-              <!-- *ngIf="chosenFunctionality === order.id"  -->
-              <ul
-                [@fadeInOut]="chosenFunctionality === order.id ? 'in' : 'out'"
-              >
+              <!--  [@fadeInOut]="chosenFunctionality === order.id ? 'in' : 'out'"-->
+              <ul *ngIf="chosenFunctionality === order.id">
                 <li>
                   <img
                     src="../../../assets/icons/check.svg"
@@ -106,11 +106,8 @@
             </button>
           </div>
         </div>
-        <!--*ngIf="openedOrderId === order.id"  -->
-        <div
-          class="post-expand-data"
-          [@fadeInOut]="openedOrderId === order.id ? 'in' : 'out'"
-        >
+        <!-- [@fadeInOut]="openedOrderId === order.id ? 'in' : 'out'"  -->
+        <div class="post-expand-data" *ngIf="openedOrderId === order.id">
           <!-- products -->
           <div class="opened-products">
             <h4>Products: ( {{ order.products.length }} )</h4>
