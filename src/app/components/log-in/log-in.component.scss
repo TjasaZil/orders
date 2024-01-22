@@ -1,38 +1,32 @@
 @import "../../app.component.scss";
 
-.login-component{
-  width:100%;
-  height:100%;
+.login-component {
+  width: 100%;
+  height: 100%;
   display: grid;
   grid-template-columns: 1fr 2fr;
 }
-.login-image{
-  height:100%;
-  width:100%;
+.login-image {
+  height: 100%;
+  width: 100%;
   background-image: url("../../../assets/images/login-photo.jpg");
   display: block;
   background-size: cover;
   background-position: center;
 }
-.login-logo{
-  width:242px;
+.login-logo {
+  width: 242px;
 }
-.login-form-container{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  form{
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: start;
-    row-gap:28px;
-    padding-top:50px;
-    width:315px;
+.login-form-container {
+  @include flex(column, center, center);
+  form {
+    @include flex(column, start, start);
+    row-gap: 28px;
+    padding-top: 50px;
+    width: 315px;
 
-    .btn-solid{
-      width:100%;
+    .btn-solid {
+      width: 100%;
     }
   }
 }

@@ -4,9 +4,7 @@
   padding: 40px;
   border-radius: 6px;
   background: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
+  @include flex(column, start, start);
   align-items: start;
   width: 80%;
   height: 80%;
@@ -17,15 +15,10 @@
 }
 
 .title-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include flex(column, center, center);
 }
 .top-title-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include flex(row, space-between, center);
   height: 20px;
   img {
     width: 20px;
@@ -34,15 +27,9 @@
 form {
   width: 100%;
   gap: 38px;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: start;
+  @include flex(column, start, start);
   .oms {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: start;
+    @include flex(column, start, start);
     padding-top: 38px;
     gap: 20px;
     width: 232px;
@@ -67,35 +54,24 @@ form {
     height: 2px;
   }
   .form-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: start;
+    @include flex(column, start, start);
     width: 100%;
   }
   .form-title-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: start;
+    @include flex(column, start, start);
     width: 100%;
     gap: 14px;
   }
   .order-details-inputs {
-    display: flex;
+    @include flex(row, start, center);
     flex-wrap: wrap;
-    justify-content: start;
     gap: 32px;
     padding-top: 14px;
-    align-items: center;
     width: 100%;
   }
   .label-input-positioning {
-    display: flex;
-    flex-direction: column;
+    @include flex(column, start, start);
     gap: 5px;
-    justify-content: start;
-    align-items: start;
     width: fit-content;
 
     #factoryId {
@@ -127,37 +103,26 @@ form {
     }
   }
   .inputs-and-buttons {
-    display: flex;
-    justify-content: space-between;
-    align-items: end;
+    @include flex(row, space-between, end);
     width: 100%;
   }
   .last-inputs {
-    display: flex;
-    justify-content: start;
-    align-items: center;
+    @include flex(row, start, center);
     gap: 32px;
   }
   .modal-buttons {
-    display: flex;
-    justify-content: end;
-    align-items: center;
+    @include flex(row, end, center);
     gap: 19px;
   }
 }
 .all-products {
+  @include flex(column, start, start);
   position: relative;
   padding-top: 14px;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: start;
   gap: 15px;
   width: 100%;
   .products-inputs {
-    display: flex;
-    justify-content: start;
-    align-items: start;
+    @include flex(row, start, start);
     gap: 52px;
     .just-inputs {
       position: absolute;
@@ -166,11 +131,9 @@ form {
       right: 0;
     }
     .product-details {
-      display: flex;
+      @include flex(row, start, start);
       width: 100%;
       flex-wrap: wrap;
-      justify-content: start;
-      align-items: start;
       gap: 32px;
       #gtin {
         width: 204px;
@@ -201,9 +164,7 @@ form {
     }
   }
   .add-product-btn {
-    display: flex;
-    justify-content: start;
-    align-items: center;
+    @include flex(row, start, center);
     span {
       margin-left: 5px;
     }
