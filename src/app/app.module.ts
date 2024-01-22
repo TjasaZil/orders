@@ -9,6 +9,7 @@ import { OrdersListComponent } from './components/orders-list/orders-list.compon
 import { AddOrderFormComponent } from './components/forms/add-order-form/add-order-form.component';
 import { DeleteOrderComponent } from './components/modals/delete-order/delete-order.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CustomInputComponent } from './components/forms/custom-input/custom-input.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     OrdersListComponent,
     AddOrderFormComponent,
     DeleteOrderComponent,
+    CustomInputComponent,
   ],
   imports: [
     BrowserModule,

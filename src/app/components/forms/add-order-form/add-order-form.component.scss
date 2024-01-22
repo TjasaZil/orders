@@ -72,39 +72,7 @@ form {
     padding-top: 14px;
     width: 100%;
   }
-  .label-input-positioning {
-    @include flex(column, start, start);
-    gap: 5px;
-    width: fit-content;
 
-    #factoryId {
-      width: 204px;
-    }
-    #factoryName {
-      width: 306px;
-    }
-    #factoryAddress {
-      width: 261px;
-    }
-    #factoryCountry {
-      width: 204px;
-    }
-    #productionLineId {
-      width: 204px;
-    }
-    #productCode {
-      width: 204px;
-    }
-    #productDescription {
-      width: 638px;
-    }
-    #poNumber {
-      width: 204px;
-    }
-    #expectedStartDate {
-      width: 204px;
-    }
-  }
   .inputs-and-buttons {
     @include flex(row, space-between, end);
     width: 100%;

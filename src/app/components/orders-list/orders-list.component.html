@@ -19,7 +19,6 @@
     (addNewOrder)="addOrder($event)"
   >
   </app-add-order-form>
-  <!--  -->
   <app-delete-order
     *ngIf="!modalDeleteClosed"
     (closingModal)="handleDeleteModalClose($event)"
@@ -39,8 +38,6 @@
               <span class="p-advent-bold">Oms ID:</span>
               <p class="p-inter-light">#{{ order.omsId }}</p>
             </div>
-            <!-- 
-              [@fadeInOut]="openedOrderId !== order.id ? 'in' : 'out'"  -->
             <div
               *ngIf="openedOrderId !== order.id"
               class="order-small-data-container"
@@ -50,8 +47,6 @@
                 Product quantity: {{ order.products.length }}
               </p>
             </div>
-            <!--  
-              [@fadeInOut]="openedOrderId !== order.id ? 'in' : 'out'"-->
             <div
               *ngIf="openedOrderId !== order.id"
               class="order-small-data-container"
@@ -69,7 +64,6 @@
               <button (click)="chooseFunctionality(order?.id)">
                 <img src="../../../assets/icons/dots.svg" alt="" class="" />
               </button>
-              <!--  [@fadeInOut]="chosenFunctionality === order.id ? 'in' : 'out'"-->
               <ul *ngIf="chosenFunctionality === order.id">
                 <li>
                   <img
@@ -106,7 +100,6 @@
             </button>
           </div>
         </div>
-        <!-- [@fadeInOut]="openedOrderId === order.id ? 'in' : 'out'"  -->
         <div class="post-expand-data" *ngIf="openedOrderId === order.id">
           <!-- products -->
           <div class="opened-products">
