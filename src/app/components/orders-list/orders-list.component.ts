@@ -27,7 +27,6 @@ export class OrdersListComponent implements OnInit {
   modalAddClosed: boolean = true;
   modalEditClosed: boolean = true;
   modalDeleteClosed: boolean = true;
-  //orderOpened:boolean=false;
   openedOrderId: string | null | undefined = null;
   chosenFunctionality: string | null | undefined = null;
   orderObj: Order = new Order();
@@ -81,16 +80,15 @@ export class OrdersListComponent implements OnInit {
   deleteOrder(order: Order) {
     this.crud.deleteOrder(order).subscribe(
       (res) => {
-        // Handle the response, e.g., remove the order from the list
         this.orderArr = this.orderArr.filter((o) => o.id !== order.id);
       },
       (err) => {
-        // Handle the error
         console.error('Error deleting order:', err);
       }
     );
   }
 
+  /** opening modals and handling their state */
   openAddModal() {
     this.modalAddClosed = false;
   }
@@ -105,32 +103,33 @@ export class OrdersListComponent implements OnInit {
   }
   handleAddModalClose(isModalClosed: boolean): void {
     this.modalAddClosed = isModalClosed;
-    this.selectedOrderForEdit = undefined; // Reset for edit scenario
+    this.selectedOrderForEdit = undefined;
   }
   handleEditModalClose(isModalClosed: boolean): void {
     this.modalEditClosed = isModalClosed;
     this.modalAddClosed = isModalClosed;
-    this.selectedOrderForEdit = undefined; // Reset for edit scenario
+    this.selectedOrderForEdit = undefined;
   }
   handleDeleteModalClose(isModalClosed: boolean): void {
     this.modalDeleteClosed = isModalClosed;
     this.selectedOrderForDelete = undefined;
   }
 
+  /** simple log out functionality */
   LogOut() {
     this.router.navigate(['/'], { replaceUrl: true });
   }
+
+  /** opening more info on an order */
   openOrder(Id?: string) {
-    //this.orderOpened=!this.orderOpened
     if (this.openedOrderId === Id) {
-      // If the clicked order is already open, close it
       this.openedOrderId = '';
     } else {
-      // Otherwise, open the clicked order
       this.openedOrderId = Id;
     }
   }
 
+  /** open to choose to edit or delete order */
   chooseFunctionality(Id?: string) {
     if (this.chosenFunctionality === Id) this.chosenFunctionality = '';
     else this.chosenFunctionality = Id;

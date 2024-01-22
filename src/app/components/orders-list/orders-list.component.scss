@@ -1,7 +1,7 @@
 @import "../../app.component.scss";
 .orders-list {
   @include flex(column, center, start);
-  width: 97%;
+  width: 100%;
   gap: 20px;
   margin-top: 26px;
 }

@@ -21,16 +21,13 @@ export class AddOrderFormComponent implements OnInit {
   }
 
   populateForm() {
-    // Ensure editOrder is defined
     if (!this.editOrder) return;
-
     this.addOrderForm.patchValue({
       omsId: this.editOrder.omsId ?? '',
-      // other top-level fields if present
     });
 
     const productsArray = this.addOrderForm.get('products') as FormArray;
-    productsArray.clear(); // Clear existing form groups
+    productsArray.clear();
 
     this.editOrder.products?.forEach((product) => {
       const productGroup = new FormGroup({
@@ -145,12 +142,11 @@ export class AddOrderFormComponent implements OnInit {
     }
     const formData = this.addOrderForm.value as Partial<Order>;
 
-    // Ensure all required fields are properly set
     const newOrder: Order = {
       ...formData,
-      omsId: formData.omsId || '', // Handle potential null or undefined values
-      products: formData.products || [], // Ensure products is always an array
-      orderDetails: formData.orderDetails || new OrderDetails(), // Ensure orderDetails is properly set
+      omsId: formData.omsId || '',
+      products: formData.products || [],
+      orderDetails: formData.orderDetails || new OrderDetails(),
     };
     if (this.editOrder)
       this.editExistingOrder.emit({ ...this.editOrder, ...formData });
