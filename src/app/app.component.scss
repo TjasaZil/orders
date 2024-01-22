@@ -1,17 +1,29 @@
+@import "./scss/variables/colours";
+@import "./scss/variables/typography";
+@import "./scss/components/buttons";
+@import "./scss/components/input";
+
 *::before,
 *::after {
   box-sizing: border-box;
 }
 * {
   border: none;
-  outline: 1px solid red;
+  //outline: 1px solid red;
 }
-img {
-  display: block;
-  max-width: 100%;
+html {
+  margin: 0;
+  padding: 0;
 }
-html{
-  overflow-x:hidden ;
+button {
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  font-family: "Advent Pro";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
 }
 @media (prefers-reduced-motion: no-preference) {
   html {
@@ -19,21 +31,59 @@ html{
   }
 }
 
-.content{
-  width:100vw;
-  display:flex;
-  flex-direction: column;
-  justify-content: center;
-   align-items: center;
-
+@mixin flex($flex-direction, $justify-content, $align-items) {
+  display: flex;
+  flex-direction: $flex-direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
 }
 
-.main-container{
-  width:100%;
-  max-width:1600px;
-  display:flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
+.content {
+  width: 100%;
+  height: 100vh;
+}
+
+.main-container {
+  padding: 34px 39px;
+}
+.orange-line {
+  height: 2px;
+  width: 100%;
+  margin-top: 22px;
+  background-color: $main-dark-orange;
+}
+.popup-background {
+  @include flex(column, center, center);
+  background: rgba(115, 115, 115, 0.6);
+  backdrop-filter: blur(4px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.fadein {
+  animation: fadeIn 2s;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.fadeout {
+  animation: fadeOut 2s;
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }

@@ -1,7 +1,151 @@
 @import "../../app.component.scss";
-.orders-list{
-  width:100%;
+.orders-list {
+  @include flex(column, center, start);
+  width: 100%;
+  gap: 20px;
+  margin-top: 26px;
 }
-ul{
-  list-style-type: none !important;
+.orders-list-container {
+  @include flex(column, center, center);
+  width: 100%;
+  padding: 12px 0px;
+  border-radius: 6px;
+  box-shadow: 0px 0px 20px 0px rgba(154, 154, 154, 0.18);
+
+  .pre-expand-data {
+    @include flex(row, space-between, center);
+    width: 100%;
+    padding: 12px 0px;
+  }
+  .order-small-data {
+    @include flex(row, start, start);
+    padding-left: 17px;
+    width: 50%;
+    gap: 78px;
+  }
+  .order-small-data-container {
+    @include flex(column, center, start);
+    width: 33%;
+    text-align: left;
+  }
+  .order-buttons {
+    @include flex(row, end, center);
+    width: 25%;
+    gap: 46px;
+    padding-right: 17px;
+  }
+  .post-expand-data {
+    @include flex(column, start, start);
+    width: 100%;
+    gap: 37px;
+    padding-top: 37px;
+
+    h4 {
+      @include textbase($text-dark, $advent, 16px, 700, 19px);
+    }
+
+    .opened-products {
+      @include flex(column, start, start);
+      gap: 11px;
+      padding-left: 17px;
+
+      .opened-products-list {
+        @include flex(row, start, start);
+        flex-wrap: wrap;
+        gap: 39px;
+        width: 100%;
+        li {
+          @include textbase(#111827, $inter, 14px, 300, 20px);
+        }
+        ul {
+          cursor: pointer;
+          scroll-snap-align: flex-start;
+          flex: 0 0 auto;
+          width: calc(100% / 5); // Each UL takes up 1/3 of the container width
+          padding: 0;
+        }
+      }
+    }
+    .opened-order-details {
+      padding-left: 17px;
+    }
+    .opened-order-data {
+      @include flex(row, start, start);
+      gap: 71px;
+    }
+    .opened-order-data-list {
+      li {
+        @include textbase(#111827, $inter, 14px, 300, 20px);
+      }
+    }
+  }
+}
+.orders {
+  width: 100%;
+  padding-top: 27px;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+.order-list-nav {
+  @include flex(row, space-between, center);
+  padding: 22px 30px;
+  border-radius: 6px;
+  background-color: $main-gray;
+  .nav-buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap: 30px;
+
+    .btn-outline {
+      @include btn(transparent, $text-light, 1px solid $main-dark-orange);
+      &:hover {
+        @include btn($bg-white, $text-dark, 1px solid $main-gray);
+      }
+      &:focus {
+        @include btn($text-dark, $text-light, 1px solid $text-dark);
+      }
+    }
+  }
+}
+
+.functionality {
+  @include flex(column, center, start);
+  position: relative;
+
+  ul {
+    @include flex(column, start, start);
+    width: 99px;
+    position: absolute;
+    top: 20px;
+    left: -20px;
+    padding: 15px 18px;
+    text-align: left;
+    gap: 15px;
+    border-radius: 6px;
+    box-shadow: 0px 0px 20px 0px rgba(154, 154, 154, 0.18);
+    background-color: white;
+    li {
+      @include flex(row, start, center);
+      gap: 8px;
+
+      &:hover .check-icon {
+        display: inline-block; /* Show check icon on hover */
+        animation: fadeIn 1s;
+      }
+
+      .check-icon {
+        display: none; /* Hide check icon by default */
+      }
+    }
+    button {
+      @include textbase($text-dark, $advent, 14px, 400, 17px);
+
+      &:hover {
+        @include textbase($text-dark, $advent, 14px, 700, 17px);
+      }
+    }
+  }
 }

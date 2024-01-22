@@ -1,0 +1,30 @@
+input {
+  padding: 0px 13px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  background: $text-light;
+  color: #6b7280 !important;
+  font-family: $advent;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  width: 286px;
+  height: 34px;
+  &::placeholder {
+    @include textbase(#6b7280, $advent, 16px, 300, 24px);
+  }
+}
+textarea:focus,
+input:focus {
+  border: none;
+  background-color: white;
+}
+
+.error {
+  border: 1px solid $text-error;
+}
+
+.error-message {
+  color: $text-error;
+  font-size: 12px;
+}

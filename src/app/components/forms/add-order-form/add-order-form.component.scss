@@ -1,27 +1,175 @@
-.popup-background{
-  background-color:black;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  top:0;
-  left:0;
-  z-index: 100;
-  width:100%;
-  height:100%;
-  overflow: hidden;
-}
-.popup{
-  border-radius: 20px;
-  padding: 50px;
-  width:50%;
-  background:white;  
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
+@import "../../../app.component.scss";
+
+.popup {
+  padding: 40px;
+  border-radius: 6px;
+  background: white;
+  @include flex(column, start, start);
   align-items: start;
-div{
-  width:100%;
+  width: 80%;
+  height: 80%;
+  overflow-y: scroll;
+  div {
+    width: 100%;
+  }
 }
+
+.title-section {
+  @include flex(column, center, center);
+}
+.top-title-section {
+  @include flex(row, space-between, center);
+  height: 20px;
+  img {
+    width: 20px;
+  }
+}
+form {
+  width: 100%;
+  gap: 38px;
+  @include flex(column, start, start);
+  .oms {
+    @include flex(column, start, start);
+    padding-top: 38px;
+    gap: 20px;
+    width: 232px;
+    input {
+      width: 204px;
+    }
+  }
+  .form-title {
+    font-family: $advent;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  label {
+    @include textbase($text-dark, $advent, 16px, 700, 20px);
+  }
+  .gray-line {
+    opacity: 0.3;
+    background-color: #7b7878;
+    width: 100%;
+    height: 2px;
+  }
+  .form-section {
+    @include flex(column, start, start);
+    width: 100%;
+  }
+  .form-title-section {
+    @include flex(column, start, start);
+    width: 100%;
+    gap: 14px;
+  }
+  .order-details-inputs {
+    @include flex(row, start, center);
+    flex-wrap: wrap;
+    gap: 32px;
+    padding-top: 14px;
+    width: 100%;
+  }
+  .label-input-positioning {
+    @include flex(column, start, start);
+    gap: 5px;
+    width: fit-content;
+
+    #factoryId {
+      width: 204px;
+    }
+    #factoryName {
+      width: 306px;
+    }
+    #factoryAddress {
+      width: 261px;
+    }
+    #factoryCountry {
+      width: 204px;
+    }
+    #productionLineId {
+      width: 204px;
+    }
+    #productCode {
+      width: 204px;
+    }
+    #productDescription {
+      width: 638px;
+    }
+    #poNumber {
+      width: 204px;
+    }
+    #expectedStartDate {
+      width: 204px;
+    }
+  }
+  .inputs-and-buttons {
+    @include flex(row, space-between, end);
+    width: 100%;
+  }
+  .last-inputs {
+    @include flex(row, start, center);
+    gap: 32px;
+  }
+  .modal-buttons {
+    @include flex(row, end, center);
+    gap: 19px;
+  }
+}
+.all-products {
+  @include flex(column, start, start);
+  position: relative;
+  padding-top: 14px;
+  gap: 15px;
+  width: 100%;
+  .products-inputs {
+    @include flex(row, start, start);
+    gap: 52px;
+    .just-inputs {
+      position: absolute;
+      width: 80%;
+      top: 14px;
+      right: 0;
+    }
+    .product-details {
+      @include flex(row, start, start);
+      width: 100%;
+      flex-wrap: wrap;
+      gap: 32px;
+      #gtin {
+        width: 204px;
+      }
+      #quantity {
+        width: 128px;
+      }
+      #serialNumberType {
+        width: 204px;
+      }
+      #serialNumbers {
+        width: 216px;
+      }
+      #templateId {
+        width: 204px;
+      }
+    }
+    button {
+      width: 200px;
+      @include textbase($text-dark, $advent, 16px, 700, 19px);
+
+      &:hover {
+        @include textbase($main-dark-orange, $advent, 16px, 700, 19px);
+      }
+      &.active {
+        @include textbase($main-dark-orange, $advent, 16px, 700, 19px);
+      }
+    }
+  }
+  .add-product-btn {
+    @include flex(row, start, center);
+    span {
+      margin-left: 5px;
+    }
+    .add-image {
+      width: 15px;
+    }
+  }
 }

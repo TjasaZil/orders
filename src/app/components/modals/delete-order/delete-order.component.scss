@@ -1,0 +1,27 @@
+@import "../../../app.component.scss";
+
+.delete-popup {
+  padding: 30px;
+  border-radius: 6px;
+  background: white;
+  @include flex(column, center, center);
+}
+.delete-icon {
+  @include flex(row, end, end);
+  width: 100%;
+  img {
+    width: 20px;
+  }
+}
+.delete-order-text {
+  @include flex(column, center, center);
+  margin: auto;
+  text-align: center;
+  padding: 0px 89px 42px 89px;
+  width: 252px;
+}
+.delete-order-btns {
+  @include flex(row, center, center);
+  padding-top: 42px;
+  gap: 20px;
+}
