@@ -42,7 +42,6 @@ export class AddOrderFormComponent implements OnInit {
         ]),
         serialNumbers: new FormControl(product.serialNumbers ?? '', [
           Validators.required,
-          Validators.pattern('^[a-zA-Z0-9 _-]+$'),
         ]),
         templateId: new FormControl(product.templateId ?? '', [
           Validators.required,
@@ -129,7 +128,6 @@ export class AddOrderFormComponent implements OnInit {
     console.log(this.closingModal);
   }
   /** emitting to add a new order*/
-
   newOrder() {
     if (this.addOrderForm.invalid) {
       this.addOrderForm.markAllAsTouched();
