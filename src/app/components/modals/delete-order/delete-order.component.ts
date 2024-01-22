@@ -3,7 +3,7 @@ import { Order } from 'src/app/models/order/order';
 
 @Component({
   selector: 'app-delete-order',
-  template: `<div class="popup-background fadein">
+  template: `<div class="popup-background">
     <div class="delete-popup">
       <div class="delete-icon">
         <button (click)="closeModal()">

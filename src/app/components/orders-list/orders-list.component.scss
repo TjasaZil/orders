@@ -33,6 +33,9 @@
     width: 25%;
     gap: 46px;
     padding-right: 17px;
+    button {
+      cursor: pointer;
+    }
   }
   .post-expand-data {
     @include flex(column, start, start);
