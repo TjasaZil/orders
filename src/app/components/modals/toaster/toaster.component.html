@@ -1,0 +1,12 @@
+<!--<div class="toaster-section">
+  <div class="toaster toaster-animation">
+    <img src="../../../assets/icons/red-check.svg" alt="" class="" />
+    <p class="deleted">Order was successfully deleted</p>
+  </div>
+</div>-->
+<div *ngIf="toasterData?.visible" class="toaster-section">
+  <div [ngClass]="['toaster', 'toaster-animation', toasterData.type]">
+    <img [src]="getIconPath()" alt="" />
+    <p [ngClass]="toasterData.type">{{ toasterData.message }}</p>
+  </div>
+</div>

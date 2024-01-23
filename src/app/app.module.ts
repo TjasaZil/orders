@@ -10,6 +10,7 @@ import { AddOrderFormComponent } from './components/forms/add-order-form/add-ord
 import { DeleteOrderComponent } from './components/modals/delete-order/delete-order.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CustomInputComponent } from './components/forms/custom-input/custom-input.component';
+import { ToasterComponent } from './components/modals/toaster/toaster.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { CustomInputComponent } from './components/forms/custom-input/custom-inp
     AddOrderFormComponent,
     DeleteOrderComponent,
     CustomInputComponent,
+    ToasterComponent,
   ],
   imports: [
     BrowserModule,

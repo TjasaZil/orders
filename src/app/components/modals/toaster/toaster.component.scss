@@ -1,0 +1,47 @@
+@import "../../../app.component.scss";
+
+.toaster-section {
+  width: 100%;
+}
+.toaster {
+  @include flex(row, center, center);
+  gap: 13px;
+  padding: 7px 3px;
+  border-radius: 6px;
+  background-color: white;
+  border: 2px solid $main-dark-orange;
+  width: 300px;
+  position: fixed;
+  top: 124px;
+  visibility: hidden;
+  z-index: 100;
+  &.deleted {
+    @include textbase($text-error, $advent, 18px, 700, 22px);
+  }
+  &.edited {
+    @include textbase($text-danger, $advent, 18px, 700, 22px);
+  }
+  &.added {
+    @include textbase($text-passed, $advent, 18px, 700, 22px);
+  }
+}
+
+.toaster-animation {
+  animation: RightLeft 8s linear;
+}
+
+@keyframes RightLeft {
+  0% {
+    visibility: visible;
+    right: -300px;
+  }
+  25% {
+    right: 40px;
+  }
+  75% {
+    right: 40px;
+  }
+  100% {
+    right: -300px;
+  }
+}
