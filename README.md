@@ -46,7 +46,7 @@ After running the above command, the application should be accessible at http://
 - **src/assets:** Static assets like images, icons, etc.
 - **src/app/scss:** SCSS styles
 - **src/app/services:** services like crud and auth
-- **db.json:** Mock database file for JSON server.
+- **orders.json:** Mock database file for JSON server.
 
 ## Features
 
