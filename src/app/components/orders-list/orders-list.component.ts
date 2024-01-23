@@ -137,11 +137,11 @@ export class OrdersListComponent implements OnInit {
   /** toaster */
   showToaster(message: string, type: 'added' | 'edited' | 'deleted') {
     this.toasterData = { message, type, visible: true };
-    this.cdr.detectChanges(); // Manually trigger change detection
+    this.cdr.detectChanges();
 
     setTimeout(() => {
       this.toasterData.visible = false;
-      this.cdr.detectChanges(); // Trigger again after hiding the toaster
+      this.cdr.detectChanges();
     }, 8000);
   }
 }

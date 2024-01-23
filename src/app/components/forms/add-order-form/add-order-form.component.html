@@ -49,6 +49,7 @@
             *ngFor="let product of products.controls; let i = index"
           >
             <button
+              class="product-btn"
               type="button"
               (click)="openProduct(i)"
               [class.active]="openedProductId === i"

@@ -95,6 +95,10 @@ form {
   .products-inputs {
     @include flex(row, start, start);
     gap: 52px;
+    .product-btn {
+      padding: 0;
+      width: fit-content;
+    }
     .just-inputs {
       position: absolute;
       width: 80%;
