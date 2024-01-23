@@ -106,11 +106,16 @@
             <h4>Products: ( {{ order.products.length }} )</h4>
             <div class="opened-products-list">
               <ul *ngFor="let product of order.products">
-                <li>GTIN: {{ product.gtin }}</li>
-                <li>Quantity: {{ product.quantity }}</li>
-                <li>Serial Number Type: {{ product.serialNumberType }}</li>
-                <li>Serial Numbers: {{ product.serialNumbers }}</li>
-                <li>Template ID: {{ product.templateId }}</li>
+                <li><span>GTIN:</span> {{ product.gtin }}</li>
+                <li><span>Quantity:</span> {{ product.quantity }}</li>
+                <li>
+                  <span>Serial Number Type:</span>
+                  {{ product.serialNumberType }}
+                </li>
+                <li>
+                  <span>Serial Numbers:</span> {{ product.serialNumbers }}
+                </li>
+                <li><span>Template ID:</span> {{ product.templateId }}</li>
               </ul>
             </div>
           </div>
@@ -120,39 +125,41 @@
             <div class="opened-order-data">
               <ul class="opened-order-data-list">
                 <li>
-                  Factory ID: {{ order.orderDetails.factoryId || "no data" }}
+                  <span>Factory ID:</span>
+                  {{ order.orderDetails.factoryId || "no data" }}
                 </li>
                 <li>
-                  Factory Name:
+                  <span>Factory Name:</span>
                   {{ order.orderDetails.factoryName || "no data" }}
                 </li>
                 <li>
-                  Factory Address:
+                  <span>Factory Address:</span>
                   {{ order.orderDetails.factoryAddress || "no data" }}
                 </li>
                 <li>
-                  Factory Country:
+                  <span>Factory Country:</span>
                   {{ order.orderDetails.factoryCountry || "no data" }}
                 </li>
                 <li>
-                  Factory Line ID:
+                  <span>Factory Line ID:</span>
                   {{ order.orderDetails.productionLineId || "no data" }}
                 </li>
               </ul>
               <ul class="opened-order-data-list">
                 <li>
-                  Product Code:
+                  <span>Product Code:</span>
                   {{ order.orderDetails.productCode || "no data" }}
                 </li>
                 <li>
-                  Product Description:
+                  <span>Product Description:</span>
                   {{ order.orderDetails.productDescription || "no data" }}
                 </li>
                 <li>
-                  PO Number: {{ order.orderDetails.poNumber || "no data" }}
+                  <span>PO Number:</span>
+                  {{ order.orderDetails.poNumber || "no data" }}
                 </li>
                 <li>
-                  Expected Start Date:
+                  <span>Expected Start Date:</span>
                   {{ order.orderDetails.expectedStartDate || "no data" }}
                 </li>
               </ul>

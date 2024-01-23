@@ -32,7 +32,7 @@ import { AuthService } from 'src/app/service/auth.service';
             formControlName="password"
           />
         </div>
-        <button type="submit" class="btn-solid login-btn">Submit</button>
+        <button type="submit" class="btn-solid login-btn">Login</button>
       </form>
     </div>
   </section>`,

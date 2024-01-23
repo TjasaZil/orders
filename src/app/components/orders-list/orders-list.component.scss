@@ -46,7 +46,6 @@
     h4 {
       @include textbase($text-dark, $advent, 16px, 700, 19px);
     }
-
     .opened-products {
       @include flex(column, start, start);
       gap: 11px;
@@ -59,11 +58,15 @@
         width: 100%;
         li {
           @include textbase(#111827, $inter, 14px, 300, 20px);
+          span {
+            @include textbase($text-dark, $inter, 14px, 500, 20px);
+          }
         }
         ul {
           cursor: pointer;
           scroll-snap-align: flex-start;
           flex: 0 0 auto;
+          min-width: 340px;
           width: calc(100% / 5); // Each UL takes up 1/3 of the container width
           padding: 0;
         }
@@ -79,6 +82,9 @@
     .opened-order-data-list {
       li {
         @include textbase(#111827, $inter, 14px, 300, 20px);
+      }
+      span {
+        @include textbase($text-dark, $inter, 14px, 500, 20px);
       }
     }
   }
@@ -105,9 +111,6 @@ ul {
     .btn-outline {
       @include btn(transparent, $text-light, 1px solid $main-dark-orange);
       &:hover {
-        @include btn($bg-white, $text-dark, 1px solid $main-gray);
-      }
-      &:focus {
         @include btn($text-dark, $text-light, 1px solid $text-dark);
       }
     }
@@ -117,7 +120,9 @@ ul {
 .functionality {
   @include flex(column, center, start);
   position: relative;
-
+  button {
+    @include flex(row, center, center);
+  }
   ul {
     @include flex(column, start, start);
     width: 99px;
