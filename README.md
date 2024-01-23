@@ -54,4 +54,4 @@ Displaying, adding, editing and deleting orders.
 
 ## Figma design
 
-`https://www.figma.com/file/m0nNAlTg8zcdwgnwGsG5XE/Aplikacija-za-naro%C4%8Dila?type=design&node-id=0%3A1&mode=design&t=KBWBTFMryKC02LpN-1`
+Made by Aleš Frelih: [design](https://www.figma.com/file/m0nNAlTg8zcdwgnwGsG5XE/Aplikacija-za-naro%C4%8Dila?type=design&node-id=0%3A1&mode=design&t=KBWBTFMryKC02LpN-1)
